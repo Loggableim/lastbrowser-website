@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lastbrowser – Il browser Windows con Sidekick AI</title>
+<meta name="description" content="Lastbrowser è un browser Windows con Sidekick AI Companion integrato. Chatta, ricerca, automatizza e organizza – direttamente dalla barra laterale.">
+<meta property="og:title" content="Lastbrowser – Browser con AI Sidekick">
+<meta property="og:description" content="Browser Windows con Sidekick. Assistente AI, Tasks, Skills e Spaces – integrati direttamente.">
+<meta property="og:image" content="/assets/app-icons/lastbrowser-app-icon-512.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/app-icons/lastbrowser-app-icon-256.png">
+<link rel="alternate" hreflang="de" href="https://lastbrowser.com/">
+<link rel="alternate" hreflang="en" href="https://lastbrowser.com/en/">
+<link rel="alternate" hreflang="fr" href="https://lastbrowser.com/fr/">
+<link rel="alternate" hreflang="es" href="https://lastbrowser.com/es/">
+<link rel="alternate" hreflang="it" href="https://lastbrowser.com/it/">
+<link rel="alternate" hreflang="pt" href="https://lastbrowser.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://lastbrowser.com/">
+<style>
+/* ═══════════════════════════════════════════════
+   LASTBROWSER.COM — Brand-konforme Landing Page
+   Corporate Design Mappe v1.0 (Mai 2026)
+   ═══════════════════════════════════════════════
+   REGELN:
+   • Navy Glass: surface, panel, stroke → dunkle Flächen dominieren
+   • Akzente SPARSAM: nur active, AI, Hover, Status
+   • Active State = gelb + Glow + dunkle Kachel
+   • Typografie: Outfit (Headlines), Inter (Body/UI)
+   • Pop-Art: Halftone-Dots, Spark-Accents, kontrollierte Farbigkeit
+   • Sidekick = emotionaler Charakter (Avatar, Empty States)
+   • Icons brauchen Clearspace (mind. 12px)
+   ═══════════════════════════════════════════════ */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --nearBlack: #070A12;
+    --midnight: #07111F;
+    --surface: #101827;
+    --panel: #0E1628;
+    --stroke: #2A3550;
+    --text: #F7FAFF;
+    --muted: #AAB4C6;
+    --electricBlue: #2563FF;
+    --cyan: #00E5FF;
+    --magenta: #FF2D8F;
+    --purple: #8A3FFC;
+    --orange: #FF8A00;
+    --yellow: #FFC800;
+    --green: #7CFF6B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--nearBlack);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Outfit', 'Inter', sans-serif; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  /* ═══ LANGUAGE SWITCHER ═══ */
+  .lang-switcher {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+  .lang-switcher .current {
+    display: flex; align-items: center; gap: 6px;
+    color: var(--muted); font-size: 13px; font-weight: 500;
+    padding: 4px 10px; border-radius: 6px;
+    border: 1px solid var(--stroke); background: transparent;
+    transition: border .2s;
+  }
+  .lang-switcher .current:hover { border-color: var(--muted); }
+  .lang-switcher .current .arrow { font-size: 8px; opacity: 0.5; }
+  .lang-switcher .dropdown {
+    display: none;
+    position: absolute; top: 100%; right: 0; margin-top: 4px;
+    background: var(--surface); border: 1px solid var(--stroke);
+    border-radius: 10px; padding: 4px; min-width: 120px;
+    z-index: 100;
+  }
+  .lang-switcher:hover .dropdown { display: block; }
+  .lang-switcher .dropdown a {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 12px; border-radius: 6px;
+    color: var(--muted); font-size: 13px; font-weight: 500;
+    text-decoration: none; transition: all .15s;
+  }
+  .lang-switcher .dropdown a:hover { background: var(--panel); color: var(--text); }
+  .lang-switcher .dropdown a.active { color: var(--text); background: var(--panel); }
+  .lang-switcher .dropdown a .flag { font-size: 16px; }
+
+    /* ═══ HALFTONE DOT PATTERNS (Pop-Art Energie-Feld) ═══ */
+  .halftone-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      radial-gradient(circle, rgba(0,229,255,0.025) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .halftone-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle, rgba(255,45,143,0.015) 1px, transparent 1px);
+    background-size: 36px 36px;
+    background-position: 18px 18px;
+  }
+
+  /* ═══ SPARK ACCENTS ═══ */
+  .spark {
+    position: fixed; pointer-events: none; z-index: 1;
+    font-size: 40px; opacity: 0.06; user-select: none;
+    font-family: sans-serif;
+  }
+  .spark.s1 { top: 80px; left: 5%; color: var(--yellow); }
+  .spark.s2 { top: 300px; right: 3%; color: var(--magenta); transform: rotate(20deg); }
+  .spark.s3 { bottom: 200px; left: 8%; color: var(--cyan); }
+  .spark.s4 { bottom: 100px; right: 6%; color: var(--purple); transform: rotate(-15deg); }
+
+  /* ═══ GLOW KEYFRAMES ═══ */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ═══ NAV ═══ */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 32px; max-width: 1200px; margin: 0 auto;
+    position: relative; z-index: 10;
+  }
+  nav .logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  nav .logo img { height: 42px; width: auto; display: block; }
+  nav .links { display: flex; gap: 28px; align-items: center; }
+  nav .links a {
+    color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color .2s;
+  }
+  nav .links a:hover { color: var(--text); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--electricBlue), var(--purple));
+    color: #fff; border: none; padding: 11px 26px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform: scale(1.03); box-shadow: 0 6px 30px rgba(37,99,255,0.25); }
+
+  .btn-ghost {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--stroke); padding: 11px 26px; border-radius: 12px;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: border .2s;
+  }
+  .btn-ghost:hover { border-color: var(--muted); }
+
+  /* ═══ HERO ═══ */
+  .hero {
+    padding: 60px 0 40px;
+    position: relative; z-index: 2;
+  }
+  .hero .h-inner {
+    display: flex; align-items: center; gap: 60px;
+  }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero .badge-strip {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+  }
+  .hero .badge {
+    display: inline-block; padding: 5px 12px; border-radius: 100px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+  }
+  .hero .badge.blue { background: rgba(37,99,255,0.1); color: var(--electricBlue); border: 1px solid rgba(37,99,255,0.15); }
+  .hero .badge.pink { background: rgba(255,45,143,0.08); color: var(--magenta); border: 1px solid rgba(255,45,143,0.15); }
+  .hero .badge.cyan { background: rgba(0,229,255,0.06); color: var(--cyan); border: 1px solid rgba(0,229,255,0.12); }
+  .hero .badge.yellow { background: rgba(255,200,0,0.08); color: var(--yellow); border: 1px solid rgba(255,200,0,0.15); }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 58px; font-weight: 800; line-height: 1.05;
+    letter-spacing: -1.5px; margin-bottom: 22px;
+  }
+  .hero h1 .grad-blue { background: linear-gradient(135deg, var(--electricBlue), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero h1 .grad-pink { background: linear-gradient(135deg, var(--magenta), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero h1 .grad-yellow { background: linear-gradient(135deg, var(--yellow), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero p {
+    color: var(--muted); font-size: 17px; max-width: 460px;
+    line-height: 1.7; margin-bottom: 32px;
+  }
+
+  /* ═══ SIDEKICK MASCOT (echtes PNG) ═══ */
+  .hero-mascot {
+    flex: 0 0 280px; display: flex; justify-content: center; align-items: center;
+    position: relative;
+  }
+  .mascot-glow {
+    position: absolute; width: 260px; height: 260px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(138,63,252,0.12), transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  .mascot-card {
+    position: relative; width: 220px; text-align: center;
+    animation: float 5s ease-in-out infinite;
+  }
+  .mascot-card .mascot-img {
+    width: 180px; height: auto; display: block; margin: 0 auto;
+    image-rendering: auto;
+  }
+  .mascot-card .m-name {
+    font-size: 15px; font-weight: 600; color: var(--cyan); margin-top: 8px;
+  }
+  .mascot-card .m-tagline {
+    font-size: 12px; color: var(--muted); margin-top: 2px;
+  }
+  .mascot-card .sparkle {
+    position: absolute; font-size: 20px; font-family: sans-serif;
+  }
+  .mascot-card .sparkle.s1 { top: 0; right: 10px; color: var(--yellow); }
+  .mascot-card .sparkle.s2 { bottom: 40px; left: 0; color: var(--magenta); }
+
+  /* ═══ MARQUEE ═══ */
+  .marquee {
+    border-top: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke);
+    padding: 14px 0; overflow: hidden; position: relative; z-index: 2;
+  }
+  .marquee-track {
+    display: flex; gap: 48px; animation: scroll 24s linear infinite;
+    width: max-content;
+  }
+  .marquee-track span {
+    white-space: nowrap; font-size: 12px; font-weight: 600;
+    color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .marquee-track span:nth-child(3n) { color: rgba(255,45,143,0.5); }
+  .marquee-track span:nth-child(5n) { color: rgba(0,229,255,0.4); }
+  .marquee-track span:nth-child(7n) { color: rgba(255,200,0,0.4); }
+
+  /* ═══ SIDEBAR LIVE DEMO ═══ */
+  .sidebar-demo-section {
+    padding: 80px 0; position: relative; z-index: 2;
+  }
+  .sidebar-demo-section h2 {
+    font-family: 'Outfit', sans-serif; font-size: 34px; font-weight: 700;
+    margin-bottom: 8px; letter-spacing: -0.5px; text-align: center;
+  }
+  .sidebar-demo-section .sub { color: var(--muted); text-align: center; margin-bottom: 48px; font-size: 15px; }
+  .sidebar-showcase {
+    display: flex; gap: 48px; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--stroke);
+    border-radius: 24px; padding: 32px;
+  }
+  .sidebar-showcase .sb-panel {
+    flex: 0 0 240px;
+    background: var(--panel); border: 1px solid var(--stroke);
+    border-radius: 14px; padding: 12px;
+  }
+  .sb-panel .sb-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 10px; margin-bottom: 4px;
+  }
+  .sb-panel .sb-head span { font-size: 14px; font-weight: 600; }
+  .sb-panel .sb-head .sbb {
+    background: var(--magenta); color: #fff; font-size: 10px; font-weight: 700;
+    padding: 1px 7px; border-radius: 100px;
+  }
+  .sb-panel .sb-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 9px 12px; border-radius: 8px;
+    font-size: 13px; color: var(--muted); font-weight: 500;
+    cursor: default;
+  }
+  .sb-panel .sb-item .sb-ico {
+    width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0;
+    background-size: cover; background-position: center;
+    opacity: 0.7;
+  }
+  .sb-panel .sb-item.active {
+    /* BRAND GUIDE: Active = yellow + glow + dark tile */
+    background: linear-gradient(135deg, rgba(255,200,0,0.04), rgba(255,200,0,0.01));
+    box-shadow: 0 0 24px rgba(255,200,0,0.05);
+    color: var(--yellow); font-weight: 600;
+  }
+  .sb-panel .sb-item.active .sb-ico { opacity: 1; }
+  .sb-divider { height: 1px; background: var(--stroke); margin: 6px 10px; }
+  .sb-panel .sb-item .sb-ico.chat { background-image: url('assets/sidebar-icons/png-32/01-chat-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.tasks { background-image: url('assets/sidebar-icons/png-32/02-tasks-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.skills { background-image: url('assets/sidebar-icons/png-32/04-skills-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.memory { background-image: url('assets/sidebar-icons/png-32/06-memory-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.spaces { background-image: url('assets/sidebar-icons/png-32/07-spaces-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.browser { background-image: url('assets/sidebar-icons/png-32/13-browser-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.settings { background-image: url('assets/sidebar-icons/png-32/16-settings-modern-popart.png'); }
+  .sb-panel .sb-item .sb-ico.sidekick { background-image: url('assets/sidebar-icons/png-32/30-sidekick-modern-popart.png'); }
+
+  .sidebar-showcase .sb-content {
+    flex: 1; padding-top: 8px;
+  }
+  .sidebar-showcase .sb-content h3 {
+    font-size: 20px; font-weight: 600; margin-bottom: 12px;
+  }
+  .sidebar-showcase .sb-content p {
+    color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;
+  }
+  .sidebar-showcase .sb-content .cd-rules {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .sidebar-showcase .sb-content .cd-rule {
+    padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 600;
+    background: var(--surface); border: 1px solid var(--stroke); color: var(--muted);
+  }
+  .sidebar-showcase .sb-content .cd-rule.active-rule {
+    background: rgba(255,200,0,0.06); border-color: rgba(255,200,0,0.15); color: var(--yellow);
+  }
+
+  /* ═══ FEATURES GRID ═══ */
+  .features { padding: 80px 0; position: relative; z-index: 2; }
+  .features h2 {
+    font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 700;
+    letter-spacing: -0.8px; text-align: center; margin-bottom: 8px;
+  }
+  .features .sub { text-align: center; color: var(--muted); font-size: 15px; margin-bottom: 48px; }
+  .f-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .f-card {
+    background: var(--surface); border: 1px solid var(--stroke);
+    border-radius: 20px; padding: 26px;
+    transition: border-color .25s, transform .25s;
+    position: relative; overflow: hidden;
+  }
+  .f-card::before {
+    content: ''; position: absolute; top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    background-image: radial-gradient(circle, rgba(255,200,0,0.06) 1px, transparent 1px);
+    background-size: 6px 6px; border-radius: 50%;
+  }
+  .f-card:nth-child(2)::before { background-image: radial-gradient(circle, rgba(0,229,255,0.06) 1px, transparent 1px); }
+  .f-card:nth-child(3)::before { background-image: radial-gradient(circle, rgba(255,45,143,0.06) 1px, transparent 1px); }
+  .f-card:nth-child(4)::before { background-image: radial-gradient(circle, rgba(138,63,252,0.06) 1px, transparent 1px); }
+  .f-card:nth-child(5)::before { background-image: radial-gradient(circle, rgba(124,255,107,0.06) 1px, transparent 1px); }
+  .f-card:nth-child(6)::before { background-image: radial-gradient(circle, rgba(255,138,0,0.06) 1px, transparent 1px); }
+  .f-card:hover { border-color: var(--electricBlue); transform: translateY(-3px); }
+  .f-card .num {
+    font-family: 'Outfit', sans-serif; font-size: 40px; font-weight: 900;
+    line-height: 1; margin-bottom: 14px; opacity: 0.08;
+  }
+  .f-card:nth-child(1) .num { color: var(--electricBlue); }
+  .f-card:nth-child(2) .num { color: var(--cyan); }
+  .f-card:nth-child(3) .num { color: var(--magenta); }
+  .f-card:nth-child(4) .num { color: var(--purple); }
+  .f-card:nth-child(5) .num { color: var(--green); }
+  .f-card:nth-child(6) .num { color: var(--orange); }
+  .f-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .f-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+  .f-card .ftag {
+    display: inline-block; margin-top: 12px;
+    font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px;
+    letter-spacing: 0.3px;
+  }
+  .f-card:nth-child(1) .ftag { background: rgba(37,99,255,0.08); color: var(--electricBlue); }
+  .f-card:nth-child(2) .ftag { background: rgba(0,229,255,0.06); color: var(--cyan); }
+  .f-card:nth-child(3) .ftag { background: rgba(255,45,143,0.08); color: var(--magenta); }
+  .f-card:nth-child(4) .ftag { background: rgba(138,63,252,0.08); color: var(--purple); }
+  .f-card:nth-child(5) .ftag { background: rgba(124,255,107,0.06); color: var(--green); }
+  .f-card:nth-child(6) .ftag { background: rgba(255,138,0,0.08); color: var(--orange); }
+
+  /* ═══ BRAND VOICE (Brand Guide Seite 5) ═══ */
+  .voice-section {
+    padding: 60px 0; border-top: 1px solid var(--stroke);
+    position: relative; z-index: 2;
+  }
+  .voice-section .v-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  }
+  .voice-section .v-col h3 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .voice-section .v-col .v-claim {
+    display: inline-block;
+    font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .voice-section .v-col.lastbrowser .v-claim { background: rgba(37,99,255,0.08); color: var(--electricBlue); }
+  .voice-section .v-col.sidekick .v-claim { background: rgba(0,229,255,0.08); color: var(--cyan); }
+  .voice-section .v-col p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .voice-section .v-col .keywords {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+  }
+  .voice-section .v-col .kw {
+    padding: 4px 12px; border-radius: 100px; font-size: 12px;
+    background: var(--surface); border: 1px solid var(--stroke); color: var(--muted);
+  }
+
+  /* ═══ DOWNLOAD ═══ */
+  .download-strip {
+    padding: 80px 0; text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(37,99,255,0.03), transparent);
+    border-top: 1px solid var(--stroke); position: relative; z-index: 2;
+  }
+  .download-strip h2 { font-family: 'Outfit', sans-serif; font-size: 38px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+  .download-strip p { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+  .download-strip .os-tags { display: flex; justify-content: center; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+  .download-strip .os-tag {
+    padding: 5px 14px; background: var(--surface); border: 1px solid var(--stroke);
+    border-radius: 100px; font-size: 12px; color: var(--muted);
+  }
+
+  /* ═══ FOOTER ═══ */
+  footer {
+    padding: 32px 0; border-top: 1px solid var(--stroke);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--muted); font-size: 13px; position: relative; z-index: 2;
+  }
+  footer .links { display: flex; gap: 24px; }
+  footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+  footer a:hover { color: var(--text); }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 900px) {
+    .hero .h-inner { flex-direction: column-reverse; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero p { margin: 0 auto 32px; }
+    .hero .badge-strip { justify-content: center; }
+    .hero .actions { justify-content: center; }
+    .hero h1 { font-size: 36px; }
+    .hero-mascot { flex: none; }
+    .mascot-card .mascot-img { width: 140px; }
+    .f-grid { grid-template-columns: 1fr; }
+    .voice-section .v-grid { grid-template-columns: 1fr; }
+    .sidebar-showcase { flex-direction: column; }
+    .sidebar-showcase .sb-panel { flex: none; width: 100%; }
+  }
+  @media (max-width: 600px) {
+    nav .links a:not(.btn-primary) { display: none; }
+    .hero h1 { font-size: 28px; }
+    .container { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="halftone-bg"></div>
+<div class="spark s1">✦</div>
+<div class="spark s2">✦</div>
+<div class="spark s3">✦</div>
+<div class="spark s4">✦</div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="/" class="logo">
+    <img src="assets/logos/lastbrowser-logo-transparent.png" alt="Lastbrowser">
+  </a>
+  <div class="links">
+    <a href="#features">Funzionalità</a>
+    <a href="#download">Scarica</a>
+    <a href="#download" class="btn-primary">Scarica</a>
+    <div class="lang-switcher">
+      <span class="current">IT <span class="arrow">▼</span></span>
+      <div class="dropdown">
+        <a href="/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/en/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/fr/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/es/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/it/" class="active"><span class="flag">🇮🇹</span> Italiano</a>
+        <a href="/pt/"><span class="flag">🇵🇹</span> Português</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="h-inner">
+      <div class="hero-text">
+        <div class="badge-strip">
+          <span class="badge blue">v0.1.3 disponibile</span>
+          <span class="badge cyan">🪟 Windows 10/11</span>
+          <span class="badge yellow">🧠 Sidekick integrato</span>
+        </div>
+        <h1>
+          Il browser che<br>
+          <span class="grad-blue">pensa con te</span>
+        </h1>
+        <p>Lastbrowser unisce un veloce browser Windows con Sidekick – un assistente AI che vive nella barra laterale. Chatta, ricerca, organizza attività, usa Skills – tutto senza cambiare pagina.</p>
+        <div class="actions" style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#download" class="btn-primary">Scarica per Windows →</a>
+          <a href="#features" class="btn-ghost">Tutte le funzionalità</a>
+        </div>
+      </div>
+
+      <!-- Sidekick Mascot (echtes CD-Asset) -->
+      <div class="hero-mascot">
+        <div class="mascot-glow"></div>
+        <div class="mascot-card">
+          <div class="sparkle s1">✦</div>
+          <div class="sparkle s2">✦</div>
+          <img src="assets/sidekick/sidekick-mascot-256.png"
+               alt="Sidekick Mascot"
+               class="mascot-img"
+               width="180" height="180">
+          <div class="m-name">✦ Sidekick</div>
+          <div class="m-tagline">Your AI companion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>✦ Browser Windows con Sidekick AI</span>
+    <span>✦ Chatta senza cambiare scheda</span>
+    <span>✦ 60+ Skills integrati</span>
+    <span>✦ Spazi agente per progetti</span>
+    <span>✦ v0.1.3 disponibile</span>
+    <span>✦ Privacy: IA locale possibile</span>
+    <span>✦ Windows 10/11 + Portable</span>
+    <span>✦ Browser Windows con Sidekick AI</span>
+    <span>✦ Chatta senza cambiare scheda</span>
+    <span>✦ 60+ Skills integrati</span>
+    <span>✦ Spazi agente per progetti</span>
+    <span>✦ v0.1.3 disponibile</span>
+    <span>✦ Privacy: IA locale possibile</span>
+    <span>✦ Windows 10/11 + Portable</span>
+  </div>
+</div>
+
+<!-- ═══ SIDEBAR VORSCHAU ═══ -->
+<section class="sidebar-demo-section" id="sidebar">
+  <div class="container">
+    <h2>Sidekick. Sempre a una chat di distanza.</h2>
+    <p class="sub">La barra laterale è il tuo compagno costante – per domande, attività e automazione. In ogni scheda.</p>
+    <div class="sidebar-showcase">
+      <div class="sb-panel">
+        <div class="sb-head">
+          <span>Barra laterale</span>
+          <span class="sbb">9+</span>
+        </div>
+        <div class="sb-item active">
+          <span class="sb-ico chat"></span> Chat
+        </div>
+        <div class="sb-item">
+          <span class="sb-ico tasks"></span> Tasks
+        </div>
+        <div class="sb-item">
+          <span class="sb-ico skills"></span> Skills
+        </div>
+        <div class="sb-item">
+          <span class="sb-ico memory"></span> Memory
+        </div>
+        <div class="sb-divider"></div>
+        <div class="sb-item">
+          <span class="sb-ico spaces"></span> Spaces
+        </div>
+        <div class="sb-item">
+          <span class="sb-ico browser"></span> Browser
+        </div>
+        <div class="sb-item">
+          <span class="sb-ico settings"></span> Settings
+        </div>
+        <div class="sb-divider"></div>
+        <div class="sb-item">
+          <span class="sb-ico sidekick"></span> Sidekick
+        </div>
+      </div>
+      <div class="sb-content">
+        <h3>Cosa fa Sidekick per te</h3>
+        <p>Sidekick non è un popup né un plugin. Vive nella barra laterale – sempre presente, mai d'intralcio. Puoi chiedergli di riassumere una pagina, scrivere un'email, analizzare codice o creare un'attività. Collabora in Spaces, ricorda il contesto e può accedere a 60+ Skills.</p>
+        <div class="cd-rules">
+          <span class="cd-rule">💬 Chat & Assistenza</span>
+          <span class="cd-rule">📋 Tasks & Todos</span>
+          <span class="cd-rule">🧩 Skills & Plugins</span>
+          <span class="cd-rule active-rule">✦ Spaces & Contesto</span>
+          <span class="cd-rule">🛡️ IA locale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="features" id="features">
+  <div class="container">
+    <h2>Browser + IA. Integrato nativamente.</h2>
+    <p class="sub">Sidekick non è un componente aggiuntivo. È parte del browser.</p>
+    <div class="f-grid">
+      <div class="f-card">
+        <div class="num">01</div>
+        <h3>Sidekick AI</h3>
+        <p>Chatta con Sidekick mentre navighi. Riepiloga pagine, scrive testi, risponde a domande ed esegue Task – senza cambiare scheda.</p>
+        <span class="ftag">Sempre nella barra laterale</span>
+      </div>
+      <div class="f-card">
+        <div class="num">02</div>
+        <h3>Tasks & Todos</h3>
+        <p>Crea attività in chat, organizzale in elenchi e lascia che Sidekick ti ricordi le scadenze. I Tasks sono disponibili in tutto il browser.</p>
+        <span class="ftag">Controllato tramite chat</span>
+      </div>
+      <div class="f-card">
+        <div class="num">03</div>
+        <h3>60+ Skills</h3>
+        <p>Analizzare codice, generare immagini, tradurre, ricercare, eseguire debug – Skills espandono Sidekick con un clic.</p>
+        <span class="ftag">Espandibile</span>
+      </div>
+      <div class="f-card">
+        <div class="num">04</div>
+        <h3>Agent Spaces</h3>
+        <p>Ogni progetto ha il proprio Space con il proprio agente, la propria Memory e i propri strumenti. Nessuna mescolanza di contesto.</p>
+        <span class="ftag">Isolato e focalizzato</span>
+      </div>
+      <div class="f-card">
+        <div class="num">05</div>
+        <h3>Privacy</h3>
+        <p>Sidekick può funzionare in locale o usare le tue chiavi API. Nessun tracciamento cloud, nessuna telemetria, nessun data-mining.</p>
+        <span class="ftag">Decidi tu</span>
+      </div>
+      <div class="f-card">
+        <div class="num">06</div>
+        <h3>Windows Nativ</h3>
+        <p>Integrazione nativa in Windows 10/11. Installer, versione Portable, System Tray, Aggiornamenti automatici. Nessuna dipendenza.</p>
+        <span class="ftag">Priorità Windows</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WARUM LASTORWSER ═══ -->
+<section class="voice-section">
+  <div class="container">
+    <div class="v-grid">
+      <div class="v-col lastbrowser">
+        <h3>Browser + IA – nessun workaround</h3>
+        <div class="v-claim">Nativo. Nessun plugin. Nessun popup.</div>
+        <p>La maggior parte delle soluzioni browser con IA sono estensioni o web app che girano in una scheda. Lastbrowser è diverso: Sidekick è integrato nell'interfaccia del browser fin dalle fondamenta. La barra laterale, la Memory, gli Skills – tutto parte del browser, non sovrapposto.</p>
+      </div>
+      <div class="v-col sidekick">
+        <h3>A chi è rivolto Lastbrowser</h3>
+        <div class="v-claim">Power user, sviluppatori, knowledge worker</div>
+        <p>Se ogni giorno fai ricerche, scrivi, programmi o organizzi – e per farlo passi continuamente da browser, chat IA e strumenti – allora Lastbrowser è fatto per te. Una finestra. Una barra laterale. Il tuo assistente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOWNLOAD ═══ -->
+<section class="download-strip" id="download">
+  <div class="container">
+    <h2>Ottieni Lastbrowser</h2>
+    <p>Versione 0.1.3 – Open Beta. Gratuito per Windows.</p>
+     <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.3" class="btn-primary" target="_blank" rel="noopener">Scarica v0.1.3 →</a>
+    <div class="os-tags">
+      <span class="os-tag">🪟 Windows 10+</span>
+      <span class="os-tag">📦 Edizione Portable</span>
+      <span class="os-tag">🔄 Aggiornamenti automatici</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div>© 2026 Lastbrowser</div>
+  <div class="links">
+    <a href="#">GitHub</a>
+    <a href="#">Privacy</a>
+    <a href="#">Docs</a>
+  </div>
+</footer>
+
+</body>
+</html>
