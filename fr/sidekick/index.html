@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sidekick – Votre assistant IA local. Dès aujourd'hui.</title>
+<meta name="description" content="Sidekick est un assistant IA local pour Windows. Chat, tâches, compétences, espaces — tout utilisable hors ligne. Gratuit pour les projets non commerciaux.">
+<meta property="og:title" content="Sidekick – Votre assistant IA local">
+<meta property="og:description" content="Assistant IA pour Windows. Fonctionne localement. Chat, tâches, compétences, espaces. Gratuit pour une utilisation non commerciale.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/assets/sidekick/sidekick-logo-01-smile-spark-dark_1200.png">
+<meta property="og:url" content="https://lastbrowser.com/sidekick/fr/">
+<link rel="icon" type="image/svg+xml" href="/assets/sidekick/sidekick-icon-smile-spark.svg">
+<link rel="canonical" href="https://lastbrowser.com/sidekick/fr/">
+<link rel="alternate" hreflang="de" href="https://lastbrowser.com/sidekick/">
+<link rel="alternate" hreflang="en" href="https://lastbrowser.com/sidekick/en/">
+<link rel="alternate" hreflang="fr" href="https://lastbrowser.com/sidekick/fr/">
+<link rel="alternate" hreflang="es" href="https://lastbrowser.com/sidekick/es/">
+<link rel="alternate" hreflang="it" href="https://lastbrowser.com/sidekick/it/">
+<link rel="alternate" hreflang="pt" href="https://lastbrowser.com/sidekick/pt/">
+<link rel="alternate" hreflang="x-default" href="https://lastbrowser.com/sidekick/">
+<style>
+:root {
+  --lb-midnight: #101629;
+  --lb-ink: #111827;
+  --lb-white: #FFFFFF;
+  --lb-snow: #F8FAFC;
+  --lb-sky: #3FD0FF;
+  --lb-blue: #4D7CFF;
+  --lb-violet: #8D6BFF;
+  --lb-bubblegum: #FF74D4;
+  --lb-coral: #FF5A7A;
+  --lb-mango: #FFB84D;
+  --lb-lemon: #F9F871;
+  --lb-mint: #38F5B3;
+  --lb-lime: #B6FF5B;
+  --lb-panel: #171B2F;
+  --lb-muted: #B8C1D9;
+  --nearBlack: #070A12;
+  --midnight: #07111F;
+  --surface: #101827;
+  --stroke: #2A3550;
+  --text: #F7FAFF;
+  --gradient-brand: linear-gradient(135deg, #3FD0FF, #8D6BFF, #FF74D4);
+  --gradient-cta: linear-gradient(135deg, #4D7CFF, #8D6BFF);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--text); background:
+  radial-gradient(circle at top left, rgba(77,124,255,.10), transparent 30%),
+  radial-gradient(circle at 90% 15%, rgba(255,116,212,.08), transparent 25%),
+  linear-gradient(180deg, #060913 0%, #070B14 45%, #05070D 100%);
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif; overflow-x:hidden; }
+body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.72; background-image: radial-gradient(circle, rgba(63,208,255,.025) 1px, transparent 1px); background-size: 24px 24px; }
+a { color:inherit; }
+.container { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
+
+/* NAV */
+nav { position:sticky; top:0; z-index:40; backdrop-filter:blur(18px); background:rgba(7,10,18,.82); border-bottom:1px solid rgba(42,53,80,.62); }
+nav .inner { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0; }
+.logo { display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0; }
+.logo-img { width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,.04); border:1px solid rgba(42,53,80,.9); box-shadow:0 12px 30px rgba(0,0,0,.24); padding:5px; }
+.logo-img svg { width:100%; height:100%; }
+.logo strong { display:block; font-family:Outfit,Inter,sans-serif; letter-spacing:-.02em; font-size:17px; line-height:1.1; }
+.logo span { display:block; font-size:12px; color:var(--lb-muted); margin-top:2px; }
+.links { display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:flex-end; }
+.links > a { color:var(--lb-muted); text-decoration:none; font-size:14px; font-weight:500; text-decoration:none; }
+.links > a:hover { color:var(--text); }
+.links > a::after { content:""; position:absolute; left:0; right:0; bottom:-7px; height:1.5px; background:var(--gradient-brand); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
+.links > a:hover::after { transform:scaleX(1); }
+.links > a { position:relative; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 17px; border-radius:14px; text-decoration:none; font-weight:700; border:1px solid transparent; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease; cursor:pointer; }
+.btn:hover { transform:translateY(-1px); }
+.btn-primary { color:#fff; background:var(--gradient-cta); box-shadow:0 16px 34px rgba(77,124,255,.22), inset 0 1px 0 rgba(255,255,255,.10); }
+.btn-ghost { color:var(--text); background:rgba(16,24,39,.82); border-color:var(--stroke); }
+.btn-primary:hover { box-shadow:0 18px 38px rgba(77,124,255,.28), inset 0 1px 0 rgba(255,255,255,.14); }
+.btn-ghost:hover { background:rgba(16,24,39,.94); border-color:rgba(72,93,128,.9); }
+.lang-switcher { position:relative; cursor:pointer; user-select:none; }
+.lang-switcher .current { display:flex; align-items:center; gap:6px; color:var(--lb-muted); font-size:13px; font-weight:600; padding:4px 10px; border-radius:8px; border:1px solid var(--stroke); background:rgba(16,24,39,.35); }
+.lang-switcher .current .arrow { font-size:8px; opacity:.5; }
+.lang-switcher .dropdown { display:none; position:absolute; right:0; top:100%; margin-top:6px; min-width:130px; padding:5px; border-radius:12px; border:1px solid var(--stroke); background:rgba(10,16,29,.98); box-shadow:0 18px 42px rgba(0,0,0,.28); }
+.lang-switcher:hover .dropdown { display:block; }
+.lang-switcher .dropdown a { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; text-decoration:none; color:var(--lb-muted); font-size:13px; }
+.lang-switcher .dropdown a:hover,
+.lang-switcher .dropdown a.active { background:rgba(16,24,39,.95); color:var(--text); }
+.lang-switcher .flag { font-size:15px; }
+
+/* HERO */
+.hero { padding:72px 0 44px; position:relative; }
+.h-inner { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:52px; align-items:center; }
+.hero-text { position:relative; z-index:2; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:10px; margin:0 0 14px; padding:8px 12px; border-radius:999px; border:1px solid rgba(42,53,80,.86); background:rgba(16,24,39,.72); color:#d8e0ef; font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:800; }
+.hero-eyebrow .dot { width:8px; height:8px; border-radius:50%; background:var(--lb-mint); display:inline-block; }
+h1 { margin:0 0 16px; font-family:Outfit,Inter,sans-serif; letter-spacing:-.05em; line-height:.94; font-size:clamp(46px, 6.8vw, 78px); }
+.grad-brand { background:var(--gradient-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.lead { margin:0; max-width:60ch; color:var(--lb-muted); font-size:18px; line-height:1.68; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.hero-note { margin-top:14px; color:#92a3c3; font-size:13px; line-height:1.5; }
+.hero-visual { position:relative; z-index:1; display:grid; gap:14px; }
+.visual-card { background:linear-gradient(180deg, rgba(16,24,39,.94), rgba(11,18,32,.91)); border:1px solid rgba(42,53,80,.64); border-radius:18px; box-shadow:0 16px 36px rgba(0,0,0,.18); overflow:hidden; position:relative; isolation:isolate; }
+.visual-card::before { content:""; position:absolute; inset:0; border-radius:18px; padding:1px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 24%, rgba(77,124,255,.10)); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
+.logo-card { padding:32px; display:grid; gap:14px; justify-items:center; text-align:center; }
+.logo-card svg { width:min(100%, 280px); height:auto; display:block; }
+.badge-strip { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; justify-content:center; }
+.badge { display:inline-flex; align-items:center; gap:8px; padding:9px 12px; border-radius:999px; background:rgba(16,24,39,.78); border:1px solid var(--stroke); color:var(--lb-muted); font-size:13px; box-shadow:0 8px 20px rgba(0,0,0,.12); }
+.badge.green { color:#d7ffea; border-color:rgba(56,245,179,.28); }
+.badge.pink { color:#ffe0f2; border-color:rgba(255,116,212,.28); }
+.badge.blue { color:#dbe7ff; border-color:rgba(77,124,255,.42); }
+
+/* RELEASE STRIP */
+.release-strip { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0; justify-content:center; }
+.release-strip span { display:inline-flex; align-items:center; gap:8px; padding:9px 12px; border-radius:999px; border:1px solid rgba(42,53,80,.88); background:rgba(12,18,32,.82); color:#d0daea; font-size:12px; font-weight:700; letter-spacing:.02em; transition:transform .22s ease, border-color .22s ease; }
+.release-strip span:hover { transform:translateY(-1px); border-color:rgba(77,124,255,.5); background:rgba(16,24,39,.94); box-shadow:0 10px 24px rgba(0,0,0,.16); }
+
+/* SECTIONS */
+.section { padding:36px 0; }
+.section h2 { margin:0 0 12px; font-family:Outfit,Inter,sans-serif; letter-spacing:-.03em; font-size:clamp(30px, 4vw, 48px); }
+.intro { margin:0 0 10px; color:var(--lb-muted); line-height:1.72; max-width:72ch; }
+.section-kicker { color:var(--lb-mint); text-transform:uppercase; letter-spacing:.14em; font-size:11px; font-weight:800; margin-bottom:8px; }
+
+/* CARDS */
+.feature-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:22px; }
+.card { background:linear-gradient(180deg, rgba(16,24,39,.94), rgba(11,18,32,.91)); border:1px solid rgba(42,53,80,.64); border-radius:18px; padding:22px; box-shadow:0 16px 36px rgba(0,0,0,.18); transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease; position:relative; overflow:hidden; }
+.card:hover { transform:translateY(-2px); box-shadow:0 20px 42px rgba(0,0,0,.22); border-color:rgba(72,93,128,.88); }
+.card h3 { margin:0 0 8px; font-size:18px; font-family:Outfit,Inter,sans-serif; }
+.card p { margin:0; color:var(--lb-muted); line-height:1.6; font-size:14px; }
+.card .icon-wrap { width:44px; height:44px; border-radius:12px; display:grid; place-items:center; margin-bottom:14px; overflow:hidden; border:1px solid rgba(42,53,80,.64); background:rgba(16,24,39,.7); }
+.card .icon-wrap svg { width:26px; height:26px; }
+
+/* LICENSE SECTION */
+.license-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+.license-card { padding:28px; border-radius:18px; background:linear-gradient(180deg, rgba(16,24,39,.94), rgba(11,18,32,.91)); border:1px solid rgba(42,53,80,.64); position:relative; overflow:hidden; transition:transform .28s ease, box-shadow .28s ease; }
+.license-card:hover { transform:translateY(-2px); box-shadow:0 20px 42px rgba(0,0,0,.22); }
+.license-card.free { border-color:rgba(56,245,179,.2); }
+.license-card.free::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--lb-mint), var(--lb-lime)); }
+.license-card.commercial { border-color:rgba(77,124,255,.2); }
+.license-card.commercial::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--lb-blue), var(--lb-violet)); }
+.license-card h3 { margin:0 0 8px; font-family:Outfit,Inter,sans-serif; font-size:22px; }
+.license-card .price { font-family:Outfit,Inter,sans-serif; font-size:36px; letter-spacing:-.04em; margin:8px 0; }
+.license-card.free .price { color:var(--lb-mint); }
+.license-card.commercial .price { color:var(--lb-blue); }
+.license-card ul { list-style:none; margin:14px 0 0; padding:0; display:grid; gap:10px; }
+.license-card ul li { display:flex; gap:10px; color:var(--lb-muted); line-height:1.55; font-size:14px; }
+.license-card ul li::before { content:"✓"; color:var(--lb-mint); font-weight:700; }
+
+/* SPLIT SECTION (Lastbrowser vs Sidekick) */
+.split-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+.split-card { padding:24px; border-radius:18px; border:1px solid rgba(42,53,80,.64); transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+.split-card:hover { transform:translateY(-2px); box-shadow:0 20px 42px rgba(0,0,0,.22); }
+.split-card.browser { background:linear-gradient(180deg, rgba(16,24,39,.94), rgba(11,18,32,.91)); }
+.split-card.sidekick { background:linear-gradient(180deg, rgba(16,24,39,.94), rgba(11,18,32,.91)); border-color:rgba(63,208,255,.15); }
+.split-card.sidekick::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:var(--gradient-brand); }
+.split-card.browser::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:var(--stroke); }
+.split-card { position:relative; overflow:hidden; }
+.split-card h3 { margin:0 0 8px; font-family:Outfit,Inter,sans-serif; font-size:20px; }
+.split-card .subtitle { color:var(--lb-muted); font-size:13px; margin-bottom:12px; }
+.split-card ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.split-card ul li { display:flex; gap:10px; color:var(--lb-muted); line-height:1.5; font-size:14px; }
+.split-card ul li::before { content:"•"; font-weight:700; }
+.split-card.sidekick ul li::before { color:var(--lb-sky); }
+.split-card.browser ul li::before { color:var(--lb-mango); }
+.status-tag { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border-radius:999px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; margin-bottom:12px; }
+.status-tag.beta { background:rgba(255,184,77,.12); color:var(--lb-mango); border:1px solid rgba(255,184,77,.2); }
+.status-tag.live { background:rgba(56,245,179,.12); color:var(--lb-mint); border:1px solid rgba(56,245,179,.2); }
+.status-tag .pulse { width:7px; height:7px; border-radius:50%; display:inline-block; }
+.status-tag.live .pulse { background:var(--lb-mint); animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+/* CTA */
+.cta-block { margin-top:22px; padding:48px; border-radius:24px; background:linear-gradient(180deg, rgba(16,24,39,.94), rgba(11,18,32,.91)); border:1px solid rgba(42,53,80,.64); text-align:center; position:relative; overflow:hidden; }
+.cta-block::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; background:var(--gradient-brand); }
+.cta-block h2 { margin:0 0 10px; }
+.cta-block p { color:var(--lb-muted); max-width:60ch; margin:0 auto 24px; line-height:1.6; }
+
+/* FOOTER */
+.footer { padding:36px 0 50px; margin-top:24px; border-top:1px solid rgba(42,53,80,.6); color:var(--lb-muted); }
+.footer-row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; align-items:center; }
+.footer a { color:var(--lb-muted); text-decoration:none; }
+.footer a:hover { color:var(--text); }
+.footer-links { display:flex; gap:16px; }
+
+/* RESPONSIVE */
+@media (max-width:1100px) {
+  .h-inner { grid-template-columns:1fr; }
+  .hero-visual { justify-self:stretch; max-width:none; }
+}
+@media (max-width:1024px) {
+  .split-grid, .license-grid { grid-template-columns:1fr 1fr; }
+  .feature-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:760px) {
+  nav .inner { align-items:flex-start; flex-direction:column; }
+  .links { justify-content:flex-start; }
+  .h-inner, .split-grid, .license-grid, .feature-grid { grid-template-columns:1fr; }
+  .hero { padding-top:28px; }
+  .cta-block { padding:32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container inner">
+    <a href="/" class="logo">
+      <img src="/assets/sidekick/sidekick-icon-smile-spark.svg" alt="Sidekick" class="logo-img" style="width:40px;height:40px;padding:5px;background:rgba(255,255,255,.04);border-radius:11px;border:1px solid rgba(42,53,80,.9);">
+      <div>
+        <strong>Sidekick</strong>
+        <span>Assistant IA · Autonome</span>
+      </div>
+    </a>
+    <div class="links">
+      <a href="/">Lastbrowser</a>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#license">Licence</a>
+      <a href="#download" class="btn btn-primary">Télécharger</a>
+      <div class="lang-switcher">
+        <span class="current">FR <span class="arrow">▼</span></span>
+        <div class="dropdown">
+          <a href="/sidekick/"><span class="flag">🇩🇪</span> Deutsch</a>
+          <a href="/sidekick/en/"><span class="flag">🇬🇧</span> English</a>
+          <a href="/sidekick/fr/" class="active"><span class="flag">🇫🇷</span> Français</a>
+          <a href="/sidekick/es/"><span class="flag">🇪🇸</span> Español</a>
+          <a href="/sidekick/it/"><span class="flag">🇮🇹</span> Italiano</a>
+          <a href="/sidekick/pt/"><span class="flag">🇵🇹</span> Português</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="container h-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="dot"></span> Disponible maintenant · Autonome</div>
+      <h1>Votre <span class="grad-brand">assistant IA</span><br>dès aujourd'hui.</h1>
+      <p class="lead">Sidekick fonctionne localement sur votre PC Windows. Chat, tâches, compétences, espaces — tout dans une application de bureau. Pas besoin de navigateur. Pas de dépendance au cloud.</p>
+      <div class="actions">
+        <a href="#download" class="btn btn-primary">Télécharger Sidekick</a>
+        <a href="#features" class="btn btn-ghost">Découvrir les fonctionnalités</a>
+      </div>
+      <p class="hero-note">Windows 10/11 · Application de bureau autonome · Open Beta</p>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-card logo-card">
+        <img src="/assets/sidekick/sidekick-logo-01-smile-spark-dark.svg" alt="Sidekick Logo" style="width:min(100%,280px);display:block;">
+        <div class="badge-strip">
+          <span class="badge green">✦ Local &amp; Privé</span>
+          <span class="badge pink">♥ Open Beta</span>
+          <span class="badge blue">⚡ Autonome</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="positioning">
+  <div class="container">
+    <div class="section-kicker">Notre écosystème</div>
+    <h2>Navigateur en développement —<br>assistant déjà prêt.</h2>
+    <p class="intro">Alors que Lastbrowser devient un navigateur Windows complet avec Sidekick dans la barre latérale, Sidekick en tant qu'application de bureau autonome est déjà disponible pour vous.</p>
+    <div class="split-grid">
+      <div class="split-card browser">
+        <div class="status-tag beta"><span class="pulse"></span> En développement</div>
+        <h3>Lastbrowser</h3>
+        <div class="subtitle">Le navigateur Windows avec Sidekick dans la barre latérale</div>
+        <ul>
+          <li>Navigateur complet avec gestion des onglets</li>
+          <li>Sidekick intégré dans la barre latérale</li>
+          <li>Espaces pour projets &amp; séparation des contextes</li>
+          <li>Open Beta · Version 0.1.3</li>
+        </ul>
+      </div>
+      <div class="split-card sidekick">
+        <div class="status-tag live"><span class="pulse"></span> Disponible maintenant</div>
+        <h3>Sidekick</h3>
+        <div class="subtitle">Application de bureau autonome pour Windows</div>
+        <ul>
+          <li>Pas besoin de navigateur — fonctionne en autonome</li>
+          <li>Modèles d'IA locaux ou vos propres clés API</li>
+          <li>Contrôle total sur vos données</li>
+          <li>Prêt à l'emploi · mises à jour quotidiennes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-kicker">Fonctionnalités</div>
+    <h2>Ce que Sidekick peut faire.</h2>
+    <p class="intro">Sidekick vous offre toute la productivité de votre assistant IA personnel — directement sur votre bureau, sans obligation de cloud.</p>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3FD0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Chat</h3>
+        <p>Posez des questions, rédigez des textes, analysez du contenu — directement dans l'application, sans changer d'onglet.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B6FF5B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Todos &amp; Tâches</h3>
+        <p>Créez, priorisez et cochez des tâches — avec le contexte de vos conversations.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFB84D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3>Compétences</h3>
+        <p>Flux de travail prédéfinis pour la recherche, la rédaction, l'analyse et plus — un clic, c'est parti.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF74D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M12 22V12"/><path d="M3.3 7l8.7 5 8.7-5"/></svg>
+        </div>
+        <h3>Espaces</h3>
+        <p>Séparez proprement vos projets avec leur propre contexte, historique et rappels — pas de mélange.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F9F871" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10h-10V2z"/><path d="M12 12l4.9-4.9"/><path d="M12 12h8"/></svg>
+        </div>
+        <h3>Modèles locaux</h3>
+        <p>Utilisez vos propres modèles d'IA locaux (llama.cpp, Ollama). Vos données ne quittent jamais votre ordinateur.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8D6BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <h3>Connexion API</h3>
+        <p>Alternative avec vos propres clés API (OpenAI, Anthropic, etc.). Flexible, comme vous le souhaitez.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="license">
+  <div class="container">
+    <div class="section-kicker">Licence</div>
+    <h2>Équitable pour tous.</h2>
+    <p class="intro">Sidekick est et reste gratuit pour les projets non commerciaux. Pour une utilisation commerciale, un accord individuel est nécessaire — simple, transparent et équitable.</p>
+    <div class="license-grid">
+      <div class="license-card free">
+        <h3>Non-Commercial</h3>
+        <div class="price">Gratuit</div>
+        <ul>
+          <li>Fonctionnalités complètes</li>
+          <li>Aucune restriction cachée</li>
+          <li>Toutes les mises à jour incluses</li>
+          <li>Utilisation locale &amp; vos propres clés API</li>
+          <li>Pour projets personnels, études, loisirs</li>
+        </ul>
+      </div>
+      <div class="license-card commercial">
+        <h3>Commercial</h3>
+        <div class="price">Sur mesure</div>
+        <ul>
+          <li>Utilisation commerciale &amp; distribution</li>
+          <li>Licences d'équipe &amp; multi-utilisateurs</li>
+          <li>Personnalisations individuelles possibles</li>
+          <li>Support prioritaire</li>
+          <li>Contact : vertrag@lastbrowser.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="download">
+  <div class="container">
+    <div class="cta-block">
+      <h2>Télécharger Sidekick maintenant.</h2>
+      <p>Pas besoin de navigateur. Pas de cloud. Pas de frais cachés. Téléchargez l'application autonome et commencez.</p>
+      <div class="actions" style="justify-content:center;">
+        <a href="/downloads/sidekick-setup.exe" class="btn btn-primary">Télécharger le programme d'installation</a>
+        <a href="/downloads/sidekick-portable.exe" class="btn btn-ghost">Version portable</a>
+      </div>
+      <p class="hero-note" style="margin-top:16px;">Windows 10/11 · Open Beta · Téléchargement direct depuis lastbrowser.com</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© 2026 Sidekick · Open Beta · Un produit de Lastbrowser</div>
+    <div class="footer-links">
+      <a href="/">Lastbrowser</a>
+      <a href="/sidekick/">Sidekick</a>
+      <a href="/downloads/latest.yml">latest.yml</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
