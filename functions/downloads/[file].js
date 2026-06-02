@@ -28,6 +28,12 @@ const ASSETS = {
     contentType: 'application/octet-stream',
     disposition: 'attachment; filename="Sidekick-0.1.3-x64-portable.exe"',
   },
+  'sidekick-portable.zip': {
+    upstream: 'https://github.com/Loggableim/sidekick/releases/download/v0.1.0/sidekick-portable-v0.1.0.zip',
+    filename: 'Sidekick-Portable-v0.1.0.zip',
+    contentType: 'application/zip',
+    disposition: 'attachment; filename="Sidekick-Portable-v0.1.0.zip"',
+  },
   'sidekick-latest.yml': {
     contentType: 'text/yaml; charset=utf-8',
     body: `version: ${SIDECKICK_VERSION}\nfiles:\n  - url: sidekick-setup.exe\n    sha512: OyPNSchr3UPEdwzBvOLU7DhiZS1ge7B0dDULgcYlE8xNN85SUk+Jd2VK4TbmYiFVc6cPbEpvL0N5I5gscxRIsA==\n    size: 204875086\npath: sidekick-setup.exe\nsha512: OyPNSchr3UPEdwzBvOLU7DhiZS1ge7B0dDULgcYlE8xNN85SUk+Jd2VK4TbmYiFVc6cPbEpvL0N5I5gscxRIsA==\nreleaseDate: '2026-06-02T16:00:00.000Z'\n`,
