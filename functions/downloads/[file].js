@@ -1,7 +1,9 @@
 const RELEASE_TAG = 'v0.1.3';
+const SIDEKICK_RELEASE_TAG = 'v0.1.0';
 
 const GITHUB_BASE = 'https://github.com/Loggableim/lastbrowser/releases/download';
-const SIDECKICK_VERSION = '0.1.3'; // same as lastbrowser for now — will diverge
+const SIDEKICK_GITHUB_BASE = 'https://github.com/Loggableim/sidekick/releases/download';
+const SIDECKICK_VERSION = '0.1.0'; // diverged from lastbrowser
 
 const ASSETS = {
   'setup.exe': {
@@ -17,16 +19,16 @@ const ASSETS = {
     disposition: 'attachment; filename="Lastbrowser-0.1.3-x64-portable.exe"',
   },
   'sidekick-setup.exe': {
-    upstream: `${GITHUB_BASE}/${RELEASE_TAG}/Lastbrowser-${RELEASE_TAG.replace('v','')}-x64-setup.exe`,
-    filename: 'Sidekick-0.1.3-x64-setup.exe',
+    upstream: `${SIDEKICK_GITHUB_BASE}/${SIDEKICK_RELEASE_TAG}/sidekick-setup.exe`,
+    filename: 'Sidekick-0.1.0-setup.exe',
     contentType: 'application/octet-stream',
-    disposition: 'attachment; filename="Sidekick-0.1.3-x64-setup.exe"',
+    disposition: 'attachment; filename="Sidekick-0.1.0-setup.exe"',
   },
   'sidekick-portable.exe': {
-    upstream: `${GITHUB_BASE}/${RELEASE_TAG}/Lastbrowser-${RELEASE_TAG.replace('v','')}-x64-portable.exe`,
-    filename: 'Sidekick-0.1.3-x64-portable.exe',
+    upstream: `${SIDEKICK_GITHUB_BASE}/${SIDEKICK_RELEASE_TAG}/sidekick-portable-v0.1.0.zip`,
+    filename: 'Sidekick-0.1.0-portable.exe',
     contentType: 'application/octet-stream',
-    disposition: 'attachment; filename="Sidekick-0.1.3-x64-portable.exe"',
+    disposition: 'attachment; filename="Sidekick-0.1.0-portable.exe"',
   },
   'sidekick-portable.zip': {
     upstream: 'https://github.com/Loggableim/sidekick/releases/download/v0.1.0/sidekick-portable-v0.1.0.zip',
