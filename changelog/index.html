@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog &amp; Roadmap – LastBrowser</title>
+<meta name="description" content="Versionshistorie und Roadmap von LastBrowser: Öffentliche Versionen und kommende Release-Kandidaten.">
+<meta property="og:title" content="Changelog &amp; Roadmap – LastBrowser">
+<meta property="og:description" content="Alle Neuerungen, Fehlerbehebungen und Meilensteine von LastBrowser im Überblick.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lastbrowser.com/changelog/">
+<meta property="og:image" content="https://lastbrowser.com/assets/sidekick/sidekick-mascot-512.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="canonical" href="https://lastbrowser.com/changelog/">
+<link rel="alternate" hreflang="de" href="https://lastbrowser.com/changelog/">
+<link rel="alternate" hreflang="en" href="https://lastbrowser.com/en/changelog/">
+<link rel="alternate" hreflang="es" href="https://lastbrowser.com/es/changelog/">
+<link rel="alternate" hreflang="fr" href="https://lastbrowser.com/fr/changelog/">
+<link rel="alternate" hreflang="it" href="https://lastbrowser.com/it/changelog/">
+<link rel="alternate" hreflang="pt" href="https://lastbrowser.com/pt/changelog/">
+<link rel="alternate" hreflang="ja" href="https://lastbrowser.com/ja/changelog/">
+<link rel="alternate" hreflang="x-default" href="https://lastbrowser.com/changelog/">
+<style>
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/inter-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('/assets/fonts/outfit-var.woff2') format('woff2');
+}
+
+:root {
+  --nearBlack:#070A12; --midnight:#07111F; --surface:#101827; --panel:#0E1628; --stroke:#2A3550;
+  --text:#F7FAFF; --muted:#AAB4C6; --electricBlue:#2563FF; --cyan:#00E5FF; --magenta:#FF2D8F;
+  --purple:#8A3FFC; --yellow:#FFC800; --green:#7CFF6B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(circle at 18% 0%,rgba(37,99,255,.2),transparent 30%),
+             radial-gradient(circle at 85% 10%,rgba(255,45,143,.14),transparent 28%),
+             radial-gradient(circle at 50% 60%,rgba(0,229,255,.06),transparent 40%),
+             linear-gradient(180deg,#060913 0%,#070B14 50%,#05070D 100%);
+  color:var(--text);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.65;
+  background-image:radial-gradient(circle,rgba(0,229,255,.035) 1px,transparent 1px);
+  background-size:24px 24px;z-index:0;
+}
+.container{width:min(1160px,calc(100% - 40px));margin:0 auto;position:relative;z-index:2}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:Outfit,Inter,sans-serif;font-weight:700}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(20px);background:rgba(7,10,18,.82);border-bottom:1px solid rgba(42,53,80,.68)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo img{width:42px;height:42px;border-radius:11px;border:1px solid rgba(42,53,80,.9);box-shadow:0 0 16px rgba(37,99,255,.25)}
+.logo strong{display:block;font-size:18px;letter-spacing:-.02em}
+.logo span{display:block;color:var(--cyan);font-size:12px;margin-top:2px;font-weight:600}
+.links{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.links a{color:var(--muted);font-size:14px;font-weight:600;transition:.2s color}
+.links a:hover,.links a.active{color:var(--text);text-decoration:none}
+.links a.active{color:var(--cyan)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:14px;text-decoration:none;font-weight:700;font-size:15px;border:1px solid transparent;transition:all .2s ease;cursor:pointer}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.btn-primary{color:#fff;background:linear-gradient(135deg,var(--electricBlue),var(--purple));box-shadow:0 12px 28px rgba(37,99,255,.3)}
+.btn-primary:hover{box-shadow:0 16px 36px rgba(37,99,255,.45)}
+.btn-ghost{background:rgba(16,24,39,.85);border-color:var(--stroke);color:var(--text)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.btn-sm{padding:8px 16px;font-size:13px;border-radius:10px}
+
+/* Hero */
+.hero{padding:60px 0 40px;text-align:center}
+.pill-badge{display:inline-flex;gap:8px;align-items:center;margin-bottom:20px;padding:8px 16px;border-radius:999px;border:1px solid rgba(0,229,255,.35);background:rgba(0,229,255,.08);color:var(--cyan);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+.hero h1{margin:0 auto 16px;max-width:880px;font-size:clamp(36px,5.5vw,62px);line-height:1.1;letter-spacing:-.04em}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--electricBlue),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{margin:0 auto 28px;max-width:680px;color:var(--muted);font-size:clamp(16px,1.8vw,19px);line-height:1.7}
+
+/* Timeline */
+.timeline{max-width:860px;margin:30px auto 60px;position:relative}
+.timeline:before{content:"";position:absolute;left:24px;top:10px;bottom:10px;width:2px;background:rgba(42,53,80,.8)}
+.release-entry{position:relative;padding-left:68px;margin-bottom:44px}
+.release-bullet{position:absolute;left:15px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--midnight);border:3px solid var(--cyan);box-shadow:0 0 12px rgba(0,229,255,.6)}
+.release-bullet.highlight{border-color:var(--magenta);box-shadow:0 0 14px rgba(255,45,143,.8)}
+.release-card{background:linear-gradient(180deg,rgba(16,24,39,.95),rgba(11,18,32,.9));border:1px solid rgba(42,53,80,.68);border-radius:20px;padding:28px}
+.release-card.current{border-color:rgba(0,229,255,.45);box-shadow:0 12px 34px rgba(0,229,255,.08)}
+.release-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.release-tag{font-size:22px;font-family:Outfit,sans-serif;font-weight:800;color:var(--text)}
+.release-date{color:var(--muted);font-size:13px}
+.badge-now{display:inline-block;padding:3px 9px;border-radius:6px;background:rgba(0,229,255,.15);border:1px solid rgba(0,229,255,.4);color:var(--cyan);font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+
+.release-list{list-style:none;margin:16px 0 0;display:flex;flex-direction:column;gap:10px}
+.release-list li{font-size:14px;color:var(--muted);line-height:1.6;position:relative;padding-left:22px}
+.release-list li:before{content:"•";position:absolute;left:4px;color:var(--cyan);font-size:18px;line-height:1}
+.release-list li strong{color:var(--text)}
+
+/* Roadmap */
+.roadmap-section{max-width:860px;margin:0 auto 70px;background:rgba(16,24,39,.7);border:1px solid rgba(42,53,80,.6);border-radius:22px;padding:32px}
+.roadmap-section h3{font-size:22px;margin-bottom:12px;color:var(--yellow);display:flex;align-items:center;gap:10px}
+.roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.rm-item{background:rgba(7,10,18,.8);border:1px solid rgba(42,53,80,.7);border-radius:14px;padding:18px}
+.rm-item h4{font-size:15px;margin-bottom:6px;color:var(--text)}
+.rm-item p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* Footer */
+footer{padding:40px 0 50px;border-top:1px solid rgba(42,53,80,.6);color:var(--muted);font-size:14px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container inner">
+    <a href="/" class="logo">
+      <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser">
+      <div><strong>LastBrowser</strong><span>v0.1.55 Beta · AI-Native</span></div>
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/features/">Features &amp; Vergleich</a>
+      <a href="/download/">Download</a>
+      <a href="/changelog/" class="active">Changelog</a>
+      <a href="/support/">Support &amp; FAQ</a>
+      <a href="/privacy/">Datenschutz</a>
+      <a href="/en/changelog/">English (EN)</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="pill-badge">✦ Versionshistorie &amp; Roadmap · Transparent &amp; Kontinuierlich</div>
+    <h1>Was gibt es Neues in <span class="grad">LastBrowser</span>?</h1>
+    <p class="lead">Alle Updates, Leistungsverbesserungen, neue Features und die geplante Entwicklungs-Roadmap im Überblick.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="timeline">
+
+    <div class="release-entry" id="v0.1.55"><div class="release-bullet highlight"></div><article class="release-card current"><div class="release-header"><span class="release-tag">v0.1.55</span><time class="release-date" datetime="2026-10-12">2026-10-12</time></div><p>Veröffentlicht am 12. Oktober 2026. Standardchat kann während des Starts gestoppt werden; Quickchat zeigt Stop während der Modellsuche. Modellkataloge werden je Profil und Konfiguration wiederverwendet. Bekannte Einschränkungen: Beim ersten Start kann eine schwarze Fläche bis Strg+R erscheinen; die signierte Version ist noch nicht in der VM abgenommen. Eine Verbesserung der Chat-Latenz ist nicht bestätigt.</p><a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.55">GitHub · v0.1.55</a></article></div>
+
+    <!-- v0.1.53 published release -->
+    <div class="release-entry"><div class="release-bullet highlight"></div><article class="release-card"><div class="release-header"><span class="release-tag">v0.1.53 · veröffentlicht</span><span class="badge-now">Frühere Veröffentlichung</span><span class="release-date">11. Oktober 2026</span></div><p style="color:var(--text);font-size:14px;font-weight:600">Version 0.1.53 wurde am 11. Oktober 2026 veröffentlicht. Sie behebt die blockierte Navigation während der Ersteinrichtung. Setup und Portable sind signiert; die auf der Downloadseite angegebenen SHA-256-Prüfsummen stimmen mit den veröffentlichten GitHub-Dateien überein.</p><ul class="release-list"><li><a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.53">GitHub-Release v0.1.53</a></li></ul></article></div>
+
+    <!-- v0.1.52 release -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="release-tag">v0.1.52 · veröffentlicht</span>
+          </div>
+          <span class="release-date">10. Oktober 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">Release 0.1.52 konsolidiert alle Hotfixes für Tab-Pinning, Profilmenü-Interaktionen, Chromium-Identitätserhalt bei OAuth sowie Performance-Optimierungen und Long-Path-Unterstützung auf Windows.</p>
+        <ul class="release-list">
+          <li><strong>Tab-Pinning &amp; Profilmenü:</strong> Zuverlässiges Drag-and-Drop von gepinnten Tabs sowie nahtlose Klickinteraktionen in allen Auflösungen.</li>
+          <li><strong>Chromium Identity &amp; OAuth:</strong> Vollständige Beibehaltung der Chromium-Identität bei Google- und OAuth-Anmeldungen ohne Datenverlust.</li>
+          <li><strong>Smart Track Spaces:</strong> Robustere Space-Erstellung und fehlerfreie Hardware-Scans auch bei langen Windows-Dateipfaden.</li>
+          <li><strong>Modell-Auswahl &amp; Stabilität:</strong> Sichere Standardauswahl in neuen Profilen und gehärtete Worker-Prozesse.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.47 signed test prerelease -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header"><span class="release-tag">v0.1.47 · TEST-Vorabversion</span><span class="release-date">7. Oktober 2026</span></div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">Die folgenden Punkte beschreiben gezielte Quellkorrekturen dieser separaten Testversion. Das signierte Testpaket ist verfügbar; praktische Laufzeit- und Providerabnahmen stehen noch aus. <a href="https://github.com/Loggableim/lastbrowser/releases/tag/test-v0.1.47-20261007-f67320f">Test-Release auf GitHub</a>.</p>
+        <ul class="release-list">
+          <li><strong>Provider und Modellkatalog:</strong> Requests werden an den gespeicherten Space-/Profilkontext gebunden und Payloads eng validiert. Zusätzliche Bridge-Diagnostik grenzt frühe Chatstartfehler ein; die Ursache des früheren Gast-Timeouts ist damit nicht bestätigt.</li>
+          <li><strong>Schnellchat:</strong> Verlauf und Status bleiben beim Spacewechsel dem ursprünglichen Kontext zugeordnet. Ein Zurücksetzen gilt erst nach positiver Bestätigung als abgeschlossen; veraltete oder nicht verfügbare Modellauswahlen werden blockiert.</li>
+          <li><strong>MiMo-Einstellungen:</strong> Eigene Beschriftung und ein bestätigungsabhängiger Schlüsselstatus verhindern, dass ein ungeprüfter Status als gespeicherte Verbindung erscheint. Eine erfolgreiche Inferenz ist nicht belegt.</li>
+          <li><strong>Weitere UI-Änderungen:</strong> Update-Hinweis und „Jetzt aktualisieren“, Post-Update-Hinweis, Logalias und ausgeblendeter wirkungsloser Trust-Schalter sind im Testpaket enthalten; ihr sichtbares Laufzeitverhalten ist nicht abgenommen.</li>
+        </ul>
+        <p style="font-size:13px;color:var(--muted)">Dies ist ein Test-Prerelease, keine stabile Version. Die v0.1.52-Update- und Stable-Downloadziele bleiben unverändert. VM-, Provider- und Zwei-Profil-Abnahme sind offen; keine Store-Zertifizierung.</p>
+      </article>
+    </div>
+
+    <!-- v0.1.45 published release -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header"><span class="release-tag">v0.1.45 · veröffentlicht</span><span class="release-date">5. Oktober 2026</span></div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">Version 0.1.45 ist am 5. Oktober 2026 erschienen. Sie bündelt den kompakten Composer mit AUTO und „Weitere“, kompakte Zielsteuerung, die Verbindung von Space Assistant und Schnellchat sowie einen vereinfachten lokalen Einrichtungsablauf.</p>
+        <ul class="release-list">
+          <li><strong>AUTO:</strong> Ein verfügbarer, konfigurierter Orchestrator wird bevorzugt. Sonst nutzt AUTO frischen beobachteten Limit-Spielraum nur, wenn er für alle Kandidaten bekannt ist, vergleicht danach aktive/kürzliche lokale Anfragen und nutzt die konfigurierte Reihenfolge als Gleichstandsregel. AUTO optimiert keine semantische Qualität oder Kosten. Der 350M-Router hat den unabhängigen Qualitäts-Holdout nicht bestanden; Teamwork bleibt separat und ausdrücklich zu wählen.</li>
+          <li><strong>Lokale KI:</strong> PC-Prüfung und Setupführung sind im Quellstand; produktive Inferenz, Runtime-/Lizenznachweise und Paketabnahme sind offen. Der RAM-Guard ist noch nicht für unterstützte Hardware qualifiziert.</li>
+          <li><strong>Teamwork:</strong> Der Drei-Schritt-Loopbacktest bestand im kontrollierten lokalen Pfad. Er belegt keine Qualität bezahlter Modelle oder externer Anbieter.</li>
+          <li><a href="/download/">Die signierten Setup- und Portable-Dateien sowie ihre Prüfsummen stehen auf der Downloadseite.</a></li>
+        </ul>
+      </article>
+    </div>
+
+        <!-- v0.1.44 published on October 3, 2026; earlier source revision -->
+    <div class="release-entry"><div class="release-bullet"></div><article class="release-card"><div class="release-header"><span class="release-tag">v0.1.44 · veröffentlicht</span><span class="release-date">3. Oktober 2026</span></div><p style="color:var(--text);font-size:14px;font-weight:600">v0.1.44 wurde am 3. Oktober 2026 aus einem früheren Quellstand veröffentlicht. Diese Website führt dafür keine neu geprüften Dateinamen oder Prüfsummen auf.</p><ul class="release-list"><li><a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.44">GitHub-Release v0.1.44</a></li></ul></article></div>
+
+    <!-- v0.1.43 published release -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="release-tag">v0.1.43</span>
+            <span class="badge-now">Frühere Veröffentlichung</span>
+          </div>
+          <span class="release-date">2. Oktober 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">Alibaba Cloud nutzt den gespeicherten Workspace und erkennt Textmodelle. Die Modellauswahl bindet den Anbieter eindeutig; Setup und Portable sind signiert.</p>
+        <ul class="release-list">
+          <li><a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.43">GitHub v0.1.43</a></li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.42 published release -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="release-tag">v0.1.42</span>
+            <span class="badge-now">Frühere Veröffentlichung</span>
+          </div>
+          <span class="release-date">1. Oktober 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">Persistente Ziele behalten frühere Schritte. Ollama Cloud, Teamwork und Streaming wurden in der gepackten App geprüft.</p>
+        <ul class="release-list">
+          <li><a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.42">GitHub v0.1.42</a></li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.41 published release -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="release-tag">v0.1.41</span>
+            <span class="badge-now">Frühere Veröffentlichung</span>
+          </div>
+          <span class="release-date">1. Oktober 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">Stabilitäts- und Zuverlässigkeitsupdate mit korrigierter Teamwork-Modellauswahl und klarer Authentifizierungsanzeige.</p>
+        <ul class="release-list">
+          <li>Setup und Portable-Version für Windows stehen auf der Downloadseite bereit.</li>
+          <li>Release-Notizen und Dateien bei GitHub. <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.41">GitHub</a>.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.38 published release -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="release-tag">v0.1.38</span>
+            <span class="badge-now">Frühere Veröffentlichung</span>
+          </div>
+          <span class="release-date">29. September 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">
+          Stabilitäts- und Provider-Korrekturen seit v0.1.34. Diese frühere Windows-Version bleibt auf GitHub verfügbar.
+        </p>
+        <ul class="release-list">
+          <li>Windows-Setup und Portable-Version stehen auf der <a href="/download/">Downloadseite</a> bereit.</li>
+          <li>Die Release-Notizen und Artefakte sind auf <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.38">GitHub</a> einsehbar.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.33 -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="release-tag">v0.1.33</span>
+          </div>
+          <span class="release-date">25. September 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">
+          Feature- &amp; Stabilitätsupdate: Teamwork- und Smart-Track-Konfiguration, Zen-Hover, Space-Assistent und Dock-Animationen.
+        </p>
+        <ul class="release-list">
+          <li><strong>Teamwork &amp; Smart Track Orchestrator:</strong> Multi-Agenten-Zusammenarbeit (Lead, Researcher, Analyst, Critic) sowie tokenoptimierter Smart Track Modus mit dynamischer Modellauswahl (Low, Medium, High).</li>
+          <li><strong>Fokus-Modus Hover Reveal:</strong> 8px-Randsensor am linken Bildschirmrand blendet die Seitenleiste im Fokus-Modus flüssig als schwebendes Overlay ein, ohne Webseiten zu verschieben.</li>
+          <li><strong>Dock Fisheye &amp; Hover-Titel:</strong> macOS-inspirierte Dock-Animation im eingeklappten Zustand mit Skalierung und Ausblenden benachbarter Icons.</li>
+          <li><strong>Space Setup Assistent:</strong> 3-stufiger Einrichtungs-Wizard für neue Spaces mit Profil-Presets (Coding, Research, Media, Blank), Akzentfarben und Modellrouting.</li>
+          <li><strong>Downloads Overlay &amp; Floating Dock:</strong> Frei verschiebbares Download-Fenster mit Minimier-Pill und flexiblen Andock-Modi.</li>
+          <li><strong>Instant Live-Auto-Save:</strong> Theme-, Schriftgrößen- und Benachrichtigungs-Optionen speichern jetzt verzögerungsfrei ohne separaten Bestätigungs-Button.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.32 -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <span class="release-tag">v0.1.32</span>
+          <span class="release-date">25. September 2026</span>
+        </div>
+        <p style="color:var(--text);font-size:14px;font-weight:600">
+          Meilenstein-Release: Space-Session-Isolation, Space-Hub Startseite und Castlabs-Widevine-Integration.
+        </p>
+        <ul class="release-list">
+          <li><strong>Space-Session-Isolation:</strong> Spaces verwenden eigene persistente Partitionen (<code>persist:profile:space</code>) für getrennte Browser-Sitzungen.</li>
+          <li><strong>Space-Hub Dashboard:</strong> Neuer Space-Bereich auf der Startseite mit Anzeige aller Spaces, Schnellwechsel, Live-Tab-Zählern und "+ Neuer Space"-Modal.</li>
+          <li><strong>Castlabs Widevine DRM:</strong> Integration des Castlabs-Electron-Builds für Widevine-geschützte Medien. Die Wiedergabe hängt weiterhin von den Anforderungen des jeweiligen Streaming-Dienstes ab.</li>
+          <li><strong>Split-View Korrekturen:</strong> Nahtloses Umschalten zwischen Dual-Tab Split-View und regulären Tabs ohne hängende Rendering-States.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.31 -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <span class="release-tag">v0.1.31</span>
+          <span class="release-date">24. September 2026</span>
+        </div>
+        <ul class="release-list">
+          <li><strong>Unified Extension &amp; Skill Hub:</strong> Chrome MV3 WebExtensions und externe MCP-Server vereint unter einem Tastenkürzel (<code>Ctrl+Shift+X</code>).</li>
+          <li><strong>Modern Popart Icons:</strong> Neue 32px &amp; 64px Vektor-Icons für die gesamte Sidebar-Navigation.</li>
+          <li><strong>Grounding Anchors:</strong> In-Page-Hervorhebung beim Quervergleich von Web-Inhalten durch Sidekick.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- v0.1.30 -->
+    <div class="release-entry">
+      <div class="release-bullet"></div>
+      <article class="release-card">
+        <div class="release-header">
+          <span class="release-tag">v0.1.30</span>
+          <span class="release-date">22. September 2026</span>
+        </div>
+        <ul class="release-list">
+          <li><strong>KI-Provider-Integrationen:</strong> Anbindung konfigurierbarer Anbieter für Sidekick.</li>
+          <li><strong>ConPTY PowerShell-Terminal:</strong> Echtes Windows-Terminal in der Browser-Sidebar mit interaktiver Agent-TUI und <code>doctor</code>-Reparaturbefehl.</li>
+          <li><strong>Smart Tab-Discarding:</strong> Automatisches Einfrieren inaktiver Tabs zur drastischen Senkung des RAM- und Akkuverbrauchs.</li>
+        </ul>
+      </article>
+    </div>
+
+  </div>
+
+  <!-- Roadmap -->
+  <section class="roadmap-section">
+    <h3>🚀 Ausblick &amp; Roadmap</h3>
+    <p style="color:var(--muted);font-size:14px;line-height:1.6">
+      Wir entwickeln LastBrowser kontinuierlich weiter. Folgende Meilensteine befinden sich aktuell in der aktiven Entwicklung:
+    </p>
+    <div class="roadmap-grid">
+      <div class="rm-item">
+        <h4>Microsoft Store Version</h4>
+        <p>Einreichung und Zertifizierung im offiziellen Windows Store für 1-Klick Installationen und automatische Store-Updates.</p>
+      </div>
+      <div class="rm-item">
+        <h4>Erweiterter MCP-Katalog</h4>
+        <p>Vorkonfigurierte 1-Klick MCP-Server für Notion, Linear, GitHub, SQLite und lokale Dateisystem-Werkzeuge.</p>
+      </div>
+      <div class="rm-item">
+        <h4>Zusätzliche Sprachpakete</h4>
+        <p>Vollständige Übersetzung aller Webseiten und App-Menüs in Spanisch, Französisch, Italienisch und Portugiesisch.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© 2026 LastBrowser Project · Local-First AI Web Browser</div>
+    <div class="footer-links">
+      <a href="/features/">Features &amp; Vergleich</a>
+      <a href="/download/">Download</a>
+      <a href="/support/">Support &amp; FAQ</a>
+      <a href="/privacy/">Datenschutzerklärung</a>
+      <a href="/en/changelog/">English Version</a>
+      <a href="https://github.com/Loggableim/lastbrowser" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:support@lastbrowser.com">support@lastbrowser.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

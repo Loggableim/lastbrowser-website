@@ -1,48 +1,22 @@
-const RELEASE_TAG = 'v0.1.3';
-const SIDEKICK_RELEASE_TAG = 'v0.1.0';
-
-const GITHUB_BASE = 'https://github.com/Loggableim/lastbrowser/releases/download';
-const SIDEKICK_GITHUB_BASE = 'https://github.com/Loggableim/sidekick/releases/download';
-const SIDECKICK_VERSION = '0.1.0'; // diverged from lastbrowser
-
+const RELEASE_TAG = 'v0.1.55';
 const ASSETS = {
   'setup.exe': {
-    upstream: `${GITHUB_BASE}/${RELEASE_TAG}/Lastbrowser-${RELEASE_TAG.replace('v','')}-x64-setup.exe`,
-    filename: 'Lastbrowser-0.1.3-x64-setup.exe',
+    upstream: `https://github.com/Loggableim/lastbrowser/releases/download/${RELEASE_TAG}/Lastbrowser-0.1.55-x64-setup.exe`,
+    filename: 'Lastbrowser-0.1.55-x64-setup.exe',
     contentType: 'application/octet-stream',
-    disposition: 'attachment; filename="Lastbrowser-0.1.3-x64-setup.exe"',
+    disposition: 'attachment; filename="Lastbrowser-0.1.55-x64-setup.exe"',
   },
   'portable.exe': {
-    upstream: `${GITHUB_BASE}/${RELEASE_TAG}/Lastbrowser-${RELEASE_TAG.replace('v','')}-x64-portable.exe`,
-    filename: 'Lastbrowser-0.1.3-x64-portable.exe',
+    upstream: `https://github.com/Loggableim/lastbrowser/releases/download/${RELEASE_TAG}/Lastbrowser-0.1.55-x64-portable.exe`,
+    filename: 'Lastbrowser-0.1.55-x64-portable.exe',
     contentType: 'application/octet-stream',
-    disposition: 'attachment; filename="Lastbrowser-0.1.3-x64-portable.exe"',
-  },
-  'sidekick-setup.exe': {
-    upstream: `${SIDEKICK_GITHUB_BASE}/${SIDEKICK_RELEASE_TAG}/sidekick-setup.exe`,
-    filename: 'Sidekick-0.1.0-setup.exe',
-    contentType: 'application/octet-stream',
-    disposition: 'attachment; filename="Sidekick-0.1.0-setup.exe"',
-  },
-  'sidekick-portable.exe': {
-    upstream: `${SIDEKICK_GITHUB_BASE}/${SIDEKICK_RELEASE_TAG}/sidekick-portable-v0.1.0.zip`,
-    filename: 'Sidekick-0.1.0-portable.exe',
-    contentType: 'application/octet-stream',
-    disposition: 'attachment; filename="Sidekick-0.1.0-portable.exe"',
-  },
-  'sidekick-portable.zip': {
-    upstream: 'https://github.com/Loggableim/sidekick/releases/download/v0.1.0/sidekick-portable-v0.1.0.zip',
-    filename: 'Sidekick-Portable-v0.1.0.zip',
-    contentType: 'application/zip',
-    disposition: 'attachment; filename="Sidekick-Portable-v0.1.0.zip"',
-  },
-  'sidekick-latest.yml': {
-    contentType: 'text/yaml; charset=utf-8',
-    body: `version: ${SIDECKICK_VERSION}\nfiles:\n  - url: sidekick-setup.exe\n    sha512: OyPNSchr3UPEdwzBvOLU7DhiZS1ge7B0dDULgcYlE8xNN85SUk+Jd2VK4TbmYiFVc6cPbEpvL0N5I5gscxRIsA==\n    size: 204875086\npath: sidekick-setup.exe\nsha512: OyPNSchr3UPEdwzBvOLU7DhiZS1ge7B0dDULgcYlE8xNN85SUk+Jd2VK4TbmYiFVc6cPbEpvL0N5I5gscxRIsA==\nreleaseDate: '2026-06-02T16:00:00.000Z'\n`,
+    disposition: 'attachment; filename="Lastbrowser-0.1.55-x64-portable.exe"',
   },
   'latest.yml': {
+    upstream: `https://github.com/Loggableim/lastbrowser/releases/download/${RELEASE_TAG}/latest.yml`,
+    filename: 'latest.yml',
     contentType: 'text/yaml; charset=utf-8',
-    body: `version: 0.1.3\nfiles:\n  - url: setup.exe\n    sha512: OyPNSchr3UPEdwzBvOLU7DhiZS1ge7B0dDULgcYlE8xNN85SUk+Jd2VK4TbmYiFVc6cPbEpvL0N5I5gscxRIsA==\n    size: 204875086\npath: setup.exe\nsha512: OyPNSchr3UPEdwzBvOLU7DhiZS1ge7B0dDULgcYlE8xNN85SUk+Jd2VK4TbmYiFVc6cPbEpvL0N5I5gscxRIsA==\nreleaseDate: '2026-05-25T20:23:46.403Z'\n`,
+    disposition: 'attachment; filename="latest.yml"',
   },
 };
 
