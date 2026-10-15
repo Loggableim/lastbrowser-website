@@ -520,11 +520,32 @@ nav .inner {
 
 .showcase-view img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   opacity: 1;
   transition: opacity 0.25s ease-in-out;
   cursor: zoom-in;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .showcase-view {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .showcase-view img {
+    max-height: 52vh;
+  }
+
+  .omnibox-mock {
+    display: none;
+  }
+
+  .window-titlebar > div:last-child {
+    display: none;
+  }
 }
 
 .showcase-view img.fade-out {
