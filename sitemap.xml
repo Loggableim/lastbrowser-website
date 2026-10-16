@@ -372,4 +372,10 @@
   <url><loc>https://lastbrowser.com/for/creators/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/for/multi-account/</loc><priority>0.8</priority></url>
 
+  <url><loc>https://lastbrowser.com/en/roadmap/</loc><priority>0.7</priority></url>
+  <url><loc>https://lastbrowser.com/es/roadmap/</loc><priority>0.7</priority></url>
+  <url><loc>https://lastbrowser.com/fr/roadmap/</loc><priority>0.7</priority></url>
+  <url><loc>https://lastbrowser.com/it/roadmap/</loc><priority>0.7</priority></url>
+  <url><loc>https://lastbrowser.com/pt/roadmap/</loc><priority>0.7</priority></url>
+  <url><loc>https://lastbrowser.com/ja/roadmap/</loc><priority>0.7</priority></url>
 </urlset>
