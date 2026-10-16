@@ -1,6 +1,6 @@
 # LastBrowser
 
-> LastBrowser is the AI-native Windows browser built with Chromium and an in-tree local Python Sidekick engine. It features an integrated AI Copilot (Sidekick), 48 built-in agentic workflows, vertical Zen sidebar, Spaces with complete session partition isolation, a native ConPTY PowerShell terminal, and full Castlabs Electron Widevine DRM L3 support for protected media streaming.
+> LastBrowser is the AI-native Windows browser a web browser for Windows and Linux with an in-tree local Python Sidekick engine. It features an integrated AI Copilot (Sidekick), 48 built-in agentic workflows, vertical Zen sidebar, Spaces with complete session partition isolation, a native ConPTY PowerShell terminal, and full Castlabs Electron Widevine DRM L3 support for protected media streaming.
 
 ## Core Pillars
 - **Platform:** Windows 10 & 11 (x64) native desktop application.

@@ -1,7 +1,7 @@
 # LastBrowser - Comprehensive Technical Architecture & LLM Guide
 
 ## 1. Overview
-LastBrowser is an AI-native Windows web browser engineered for power users, developers, and knowledge workers. It combines a high-performance Chromium rendering engine (via Electron) with a local in-tree Python agent runtime (Sidekick) and an embedded ConPTY Windows terminal.
+LastBrowser is an AI-native Windows web browser engineered for power users, developers, and knowledge workers. It combines a high-performance rendering engine (via Electron) with a local in-tree Python agent runtime (Sidekick) and an embedded ConPTY Windows terminal.
 
 ## 2. Technical Stack & Architecture
 - **Desktop Shell:** Electron 34+ with TypeScript, React 19, and Vite.
