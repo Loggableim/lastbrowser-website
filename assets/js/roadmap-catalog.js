@@ -36,8 +36,7 @@ export const roadmapCatalog = [
   ['automatic-model-routing', 'Modellwahl nach Aufgabe'],
   ['cost-estimates', 'Kostenprognose pro Auftrag'],
   ['extension-health', 'Erweiterungs-Gesundheitsanzeige'],
-  ['custom-shortcuts', 'Eigene Schnellbefehle und Tastenkürzel']
-
+  ['custom-shortcuts', 'Eigene Schnellbefehle und Tastenkürzel'],
   ['partner-adguard', 'Mögliches Plugin: AdGuard (angefragt)'],
   ['partner-ivpn', 'Mögliches Plugin: IVPN (angefragt)'],
   ['partner-mullvad', 'Mögliches Plugin: Mullvad VPN (angefragt)'],
