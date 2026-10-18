@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- 3. Interactive Screenshot Showcase ---
   var scBtns = document.querySelectorAll('.sc-btn');
   var scImg = document.getElementById('showcase-image');
+  var scWebp = document.getElementById('showcase-image-webp');
   var scTitle = document.getElementById('showcase-title');
   var scDesc = document.getElementById('showcase-desc');
 
@@ -60,6 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         scImg.classList.add('fade-out');
         setTimeout(function() {
           scImg.src = newSrc;
+          if (scWebp && newSrc && newSrc.endsWith('.png')) {
+            scWebp.srcset = newSrc.replace(/\.png$/, '.webp');
+          } else if (scWebp) {
+            scWebp.removeAttribute('srcset');
+          }
           if (scTitle && newTitle) scTitle.textContent = newTitle;
           if (scDesc && newDesc) scDesc.textContent = newDesc;
           scImg.classList.remove('fade-out');
