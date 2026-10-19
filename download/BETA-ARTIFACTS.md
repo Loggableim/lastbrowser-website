@@ -12,7 +12,10 @@ Bindings), not in the repository. A `wrangler.toml` is intentionally not tracked
 as long as the bucket does not exist, the binding makes every Pages deployment
 fail (main and previews) with `R2 bucket not found`. Without the binding the
 function returns the documented HTTP 503 fallback. Add the binding only after
-the bucket exists, then trigger a fresh deployment.
+the bucket exists, then trigger a fresh deployment. If a deployment with the
+binding already ran, remove the binding in the Pages project settings as well;
+deleting the file alone does not clear a binding that was already applied to
+the project.
 
 ## Upload gate
 
