@@ -1,6 +1,0 @@
-name = "lastbrowser-website"
-pages_build_output_dir = "."
-
-[[r2_buckets]]
-binding = "BETA_DOWNLOADS"
-bucket_name = "lastbrowser-beta-downloads"
