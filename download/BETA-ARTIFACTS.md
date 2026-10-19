@@ -5,7 +5,14 @@ Website links (after deploy + upload):
 - `https://lastbrowser.com/downloads/beta/Lastbrowser-0.1.57-demo.4-x64-setup.exe`
 - `https://lastbrowser.com/downloads/beta/Lastbrowser-0.1.57-demo.4-x86_64.AppImage`
 
-Cloudflare Pages Function: `functions/downloads/beta/[file].js` serves objects from R2 bucket **`lastbrowser-beta-downloads`** (binding `BETA_DOWNLOADS` in `wrangler.toml`).
+Cloudflare Pages Function: `functions/downloads/beta/[file].js` serves objects from R2 bucket **`lastbrowser-beta-downloads`** over the binding `BETA_DOWNLOADS`.
+
+The binding is configured in the Cloudflare Pages project (Settings → Functions →
+Bindings), not in the repository. A `wrangler.toml` is intentionally not tracked:
+as long as the bucket does not exist, the binding makes every Pages deployment
+fail (main and previews) with `R2 bucket not found`. Without the binding the
+function returns the documented HTTP 503 fallback. Add the binding only after
+the bucket exists, then trigger a fresh deployment.
 
 ## Upload gate
 
@@ -24,6 +31,8 @@ separate acceptance. The stable v0.1.55 GitHub assets stay unchanged.
 Example (after `wrangler login`):
 
 ```bash
+wrangler r2 bucket create lastbrowser-beta-downloads
+
 wrangler r2 object put lastbrowser-beta-downloads/beta/Lastbrowser-0.1.57-demo.4-x86_64.AppImage \
   --file=/path/to/Lastbrowser-0.1.57-demo.4-x86_64.AppImage
 
