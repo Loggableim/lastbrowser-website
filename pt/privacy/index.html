@@ -23,33 +23,31 @@
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
-<script src="/assets/js/theme.js?v=20261022c"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261023a">
+<script src="/assets/js/theme.js?v=20261023a"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
 
-<nav>
+<nav class="site-nav" aria-label="Navegação principal">
   <div class="container inner">
     <a href="/pt/" class="logo">
       <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="40" height="40">
       <div><strong>LastBrowser</strong><span>Privacidade</span></div>
     </a>
     <div class="nav-links">
-      <a href="/pt/roadmap/">Roteiro</a>
       <a href="/pt/features/">Recursos</a>
       <a href="/spaces/">Espaços</a>
       <a href="/docs/terminal/">Terminal</a>
       <a href="/hub/">Hub MCP</a>
       <a href="/docs/">Documentação</a>
       <a href="/pt/enterprise/">Empresas</a>
-      <a href="/pt/download/">Baixar</a>
     </div>
     <div class="nav-actions">
       <div class="lang-picker">
-        <button class="lang-btn" aria-label="Escolher idioma">🇵🇹 PT ▾</button>
+        <button class="lang-btn" aria-haspopup="true" aria-label="Escolher idioma">🇵🇹 PT ▾</button>
         <div class="lang-menu">
           <a href="/privacy/" data-lang="de">🇩🇪 Deutsch</a>
           <a href="/en/privacy/" data-lang="en">🇬🇧 English</a>
@@ -61,21 +59,32 @@
         </div>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">☀️</button>
-      <a href="/pt/download/" class="btn btn-primary btn-sm">Baixar</a>
-      <button class="mobile-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+      <a href="/pt/download/" class="btn nav-download btn-primary btn-sm">Baixar</a>
+      <button class="mobile-toggle" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Abrir menu">☰</button>
     </div>
   </div>
 </nav>
 
-<div class="mobile-drawer">
-  <a href="/pt/features/">Recursos</a>
-  <a href="/spaces/">Espaços</a>
-  <a href="/docs/terminal/">Terminal</a>
-  <a href="/hub/">Hub MCP</a>
-  <a href="/docs/">Documentação</a>
-  <a href="/pt/enterprise/">Empresas</a>
-  <a href="/pt/download/">Baixar</a>
-  <a href="/pt/imprint/">Aviso Legal</a>
+<div class="mobile-drawer" id="mobile-drawer" hidden>
+  <nav aria-label="Navegação móvel">
+    <a href="/pt/features/">Recursos</a>
+    <a href="/spaces/">Espaços</a>
+    <a href="/docs/terminal/">Terminal</a>
+    <a href="/hub/">Hub MCP</a>
+    <a href="/docs/">Documentação</a>
+    <a href="/pt/enterprise/">Empresas</a>
+    <a href="/pt/imprint/">Aviso Legal</a>
+    <a href="/pt/download/" class="btn btn-primary drawer-download">Baixar</a>
+  </nav>
+    <div class="drawer-langs">
+      <a href="/privacy/" data-lang="de">🇩🇪 Deutsch</a>
+      <a href="/en/privacy/" data-lang="en">🇬🇧 English</a>
+      <a href="/es/privacy/" data-lang="es">🇪🇸 Español</a>
+      <a href="/fr/privacy/" data-lang="fr">🇫🇷 Français</a>
+      <a href="/it/privacy/" data-lang="it">🇮🇹 Italiano</a>
+      <a href="/pt/privacy/" data-lang="pt" aria-current="true">🇵🇹 Português</a>
+      <a href="/ja/privacy/" data-lang="ja">🇯🇵 日本語</a>
+    </div>
 </div>
 
 <main id="main">
@@ -206,6 +215,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022c"></script>
+<script src="/assets/js/app.js?v=20261023a"></script>
 </body>
 </html>

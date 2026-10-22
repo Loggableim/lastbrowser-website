@@ -13,41 +13,40 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://lastbrowser.com/hub/">
 <link rel="alternate" hreflang="de" href="https://lastbrowser.com/hub/">
+<link rel="alternate" hreflang="en" href="https://lastbrowser.com/en/hub/">
 <link rel="alternate" hreflang="x-default" href="https://lastbrowser.com/hub/">
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/docs.css?v=20261022c">
-<script src="/assets/js/theme.js?v=20261022c"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/docs.css?v=20261023a">
+<script src="/assets/js/theme.js?v=20261023a"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Inhalt springen</a>
 
-<nav>
+<nav class="site-nav" aria-label="Hauptnavigation">
   <div class="container inner">
     <a href="/" class="logo">
       <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="40" height="40">
       <div><strong>LastBrowser</strong><span>MCP &amp; Extension Hub</span></div>
     </a>
     <div class="nav-links">
-      <a href="/roadmap/">Roadmap</a>
       <a href="/features/">Features</a>
       <a href="/spaces/">Spaces</a>
       <a href="/docs/terminal/">Terminal</a>
-      <a href="/hub/" class="active">MCP Hub</a>
+      <a href="/hub/" class="active" aria-current="page">MCP Hub</a>
       <a href="/docs/">Dokumentation</a>
       <a href="/enterprise/">Enterprise</a>
-      <a href="/download/">Download</a>
     </div>
     <div class="nav-actions">
       <div class="lang-picker">
-        <button class="lang-btn" aria-label="Sprache wählen">🇩🇪 DE ▾</button>
+        <button class="lang-btn" aria-haspopup="true" aria-label="Sprache wählen">🇩🇪 DE ▾</button>
         <div class="lang-menu">
           <a href="/hub/" class="active" data-lang="de">🇩🇪 Deutsch</a>
-          <a href="/en/" data-lang="en">🇬🇧 English</a>
+          <a href="/en/hub/" data-lang="en">🇬🇧 English</a>
           <a href="/es/" data-lang="es">🇪🇸 Español</a>
           <a href="/fr/" data-lang="fr">🇫🇷 Français</a>
           <a href="/it/" data-lang="it">🇮🇹 Italiano</a>
@@ -56,21 +55,32 @@
         </div>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Design umschalten">☀️</button>
-      <a href="/download/" class="btn btn-primary btn-sm">Download</a>
-      <button class="mobile-toggle" aria-expanded="false" aria-label="Menü öffnen">☰</button>
+      <a href="/download/" class="btn nav-download btn-primary btn-sm">Download</a>
+      <button class="mobile-toggle" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Menü öffnen">☰</button>
     </div>
   </div>
 </nav>
 
-<div class="mobile-drawer">
-  <a href="/features/">Features</a>
-  <a href="/spaces/">Spaces</a>
-  <a href="/docs/terminal/">Terminal</a>
-  <a href="/hub/">MCP Hub</a>
-  <a href="/docs/">Dokumentation</a>
-  <a href="/enterprise/">Enterprise</a>
-  <a href="/download/">Download</a>
-  <a href="/imprint/">Impressum</a>
+<div class="mobile-drawer" id="mobile-drawer" hidden>
+  <nav aria-label="Mobile Navigation">
+    <a href="/features/">Features</a>
+    <a href="/spaces/">Spaces</a>
+    <a href="/docs/terminal/">Terminal</a>
+    <a href="/hub/" aria-current="page">MCP Hub</a>
+    <a href="/docs/">Dokumentation</a>
+    <a href="/enterprise/">Enterprise</a>
+    <a href="/imprint/">Impressum</a>
+    <a href="/download/" class="btn btn-primary drawer-download">Download</a>
+  </nav>
+    <div class="drawer-langs">
+      <a href="/hub/" data-lang="de" aria-current="true">🇩🇪 Deutsch</a>
+      <a href="/en/hub/" data-lang="en">🇬🇧 English</a>
+      <a href="/es/" data-lang="es">🇪🇸 Español</a>
+      <a href="/fr/" data-lang="fr">🇫🇷 Français</a>
+      <a href="/it/" data-lang="it">🇮🇹 Italiano</a>
+      <a href="/pt/" data-lang="pt">🇵🇹 Português</a>
+      <a href="/ja/" data-lang="ja">🇯🇵 日本語</a>
+    </div>
 </div>
 
 <main id="main">
@@ -341,6 +351,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022c"></script>
+<script src="/assets/js/app.js?v=20261023a"></script>
 </body>
 </html>

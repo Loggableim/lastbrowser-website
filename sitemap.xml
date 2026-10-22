@@ -254,6 +254,12 @@
   <url><loc>https://lastbrowser.com/docs/terminal/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/docs/mcp/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/docs/extensions/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/docs/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/docs/getting-started/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/docs/spaces/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/docs/terminal/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/docs/mcp/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/docs/extensions/</loc><priority>0.75</priority></url>
 
   <!-- ========================================== -->
   <!-- 10. PRODUCT HUBS & POWER TOOLS             -->
@@ -261,10 +267,16 @@
   <url><loc>https://lastbrowser.com/hub/</loc><priority>0.85</priority></url>
   <url><loc>https://lastbrowser.com/shortcuts/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/spaces/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/hub/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/shortcuts/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/spaces/</loc><priority>0.75</priority></url>
   <url><loc>https://lastbrowser.com/roadmap/</loc><priority>0.75</priority></url>
   <url><loc>https://lastbrowser.com/releases/</loc><priority>0.75</priority></url>
   <url><loc>https://lastbrowser.com/security/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/press/</loc><priority>0.6</priority></url>
+  <url><loc>https://lastbrowser.com/en/releases/</loc><priority>0.7</priority></url>
+  <url><loc>https://lastbrowser.com/en/security/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/press/</loc><priority>0.55</priority></url>
   <url>
     <loc>https://lastbrowser.com/changelog/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://lastbrowser.com/changelog/"/>
@@ -354,6 +366,7 @@
   <!-- 11. ENGINEERING BLOG                       -->
   <!-- ========================================== -->
   <url><loc>https://lastbrowser.com/blog/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://lastbrowser.com/en/blog/</loc><priority>0.75</priority><changefreq>weekly</changefreq></url>
 
   <!-- ========================================== -->
   <!-- 12. HEAD-TO-HEAD VS COMPARISONS            -->
@@ -364,6 +377,12 @@
   <url><loc>https://lastbrowser.com/vs/edge/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/vs/zen/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/vs/opera-one/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/vs/arc/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/vs/brave/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/vs/chrome/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/vs/edge/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/vs/zen/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/vs/opera-one/</loc><priority>0.75</priority></url>
 
   <!-- ========================================== -->
   <!-- 13. AUDIENCE TARGETING LANDING PAGES       -->
@@ -371,6 +390,9 @@
   <url><loc>https://lastbrowser.com/for/developers/</loc><priority>0.85</priority></url>
   <url><loc>https://lastbrowser.com/for/creators/</loc><priority>0.8</priority></url>
   <url><loc>https://lastbrowser.com/for/multi-account/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/for/developers/</loc><priority>0.8</priority></url>
+  <url><loc>https://lastbrowser.com/en/for/creators/</loc><priority>0.75</priority></url>
+  <url><loc>https://lastbrowser.com/en/for/multi-account/</loc><priority>0.75</priority></url>
 
   <url><loc>https://lastbrowser.com/en/roadmap/</loc><priority>0.7</priority></url>
   <url><loc>https://lastbrowser.com/es/roadmap/</loc><priority>0.7</priority></url>
