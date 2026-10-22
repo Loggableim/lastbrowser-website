@@ -73,9 +73,30 @@
     window.requestAnimationFrame(frame);
   }
 
+  function setFallbackVisible(element, hasCount) {
+    var scope = (element && element.parentElement) || (typeof document !== 'undefined' && document) || null;
+    if (!scope || typeof scope.querySelector !== 'function') return;
+    var fallback = scope.querySelector('[data-download-fallback]');
+    if (fallback) {
+      if (hasCount) fallback.setAttribute('hidden', '');
+      else fallback.removeAttribute('hidden');
+    }
+  }
+
   function render(element, data) {
     var locale = element.getAttribute('data-locale') || (typeof document !== 'undefined' && document.documentElement && document.documentElement.lang) || 'en';
     var text = labels[locale] || labels.en;
+
+    var totalCount = data && data.status !== 'unavailable' && data.counts ? data.counts.total : null;
+    // Solange keine Zahl vorliegt: Box ausblenden, Fallback-Zeile zeigen.
+    if (totalCount === null) {
+      element.setAttribute('hidden', '');
+      element.replaceChildren();
+      setFallbackVisible(element, false);
+      return;
+    }
+    element.removeAttribute('hidden');
+    setFallbackVisible(element, true);
     element.replaceChildren();
 
     var title = document.createElement('span');
@@ -86,21 +107,16 @@
     var value = document.createElement('strong');
     value.className = 'download-counter-value';
 
-    var totalCount = data && data.status !== 'unavailable' && data.counts ? data.counts.total : null;
-    if (totalCount !== null) {
-      var prev = element._lbCurrentCount;
-      element._lbCurrentCount = totalCount;
-      if (typeof prev === 'number' && prev !== totalCount && typeof window !== 'undefined' && window.requestAnimationFrame) {
-        animateCount(value, prev, totalCount, locale, 400);
-        value.classList.add('tick-up');
-        setTimeout(function () { value.classList.remove('tick-up'); }, 500);
-      } else if (typeof prev === 'undefined' && typeof window !== 'undefined' && window.requestAnimationFrame) {
-        animateCount(value, 0, totalCount, locale, 900);
-      } else {
-        value.textContent = new Intl.NumberFormat(locale).format(totalCount);
-      }
+    var prev = element._lbCurrentCount;
+    element._lbCurrentCount = totalCount;
+    if (typeof prev === 'number' && prev !== totalCount && typeof window !== 'undefined' && window.requestAnimationFrame) {
+      animateCount(value, prev, totalCount, locale, 400);
+      value.classList.add('tick-up');
+      setTimeout(function () { value.classList.remove('tick-up'); }, 500);
+    } else if (typeof prev === 'undefined' && typeof window !== 'undefined' && window.requestAnimationFrame) {
+      animateCount(value, 0, totalCount, locale, 900);
     } else {
-      value.textContent = data ? text.unavailable : text.loading;
+      value.textContent = new Intl.NumberFormat(locale).format(totalCount);
     }
     element.append(value);
 
