@@ -1064,3 +1064,183 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Nav-Overhaul (nav-after): schlanker Header, max. 6 Links, Drawer a11y
+   Nutzt bestehende Tokens (--nav-bg, --stroke, --text, --muted, --cyan ...).
+   Kein Redesign der Seiten, nur Header/Nav/Drawer.
+   ========================================================================== */
+
+:root {
+  --nav-h: 64px;
+}
+
+/* Einheitliche Header-Hoehe, kein Umbruch, ruhiger sticky Hintergrund */
+nav.site-nav .inner {
+  min-height: var(--nav-h);
+  padding-top: 0;
+  padding-bottom: 0;
+  flex-wrap: nowrap;
+}
+
+.site-nav .logo {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Max. 6 Hauptlinks: ruhig, einzeilig, Pillen-Hover + klarer Aktiv-Zustand */
+.site-nav .nav-links {
+  gap: 2px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.site-nav .nav-links a {
+  padding: 9px 13px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.site-nav .nav-links a:hover {
+  color: var(--text);
+  background: rgba(0, 229, 255, 0.08);
+  border-color: transparent;
+  text-decoration: none;
+}
+
+.site-nav .nav-links a.active,
+.site-nav .nav-links a[aria-current="page"] {
+  color: var(--cyan);
+  background: rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.25);
+  text-decoration: none;
+}
+
+/* Light-Theme: dunkleres Aktiv-Cyan (#0369a1, Kontrast >= 4.5, wie P2-1/P2-3) */
+[data-theme="light"] .site-nav .nav-links a.active,
+[data-theme="light"] .site-nav .nav-links a[aria-current="page"],
+[data-theme="light"] .mobile-drawer nav a[aria-current="page"],
+[data-theme="light"] .drawer-langs a.active,
+[data-theme="light"] .drawer-langs a[aria-current="true"] {
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.35);
+  background: rgba(3, 105, 161, 0.08);
+}
+
+.site-nav .nav-actions {
+  flex-shrink: 0;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+/* Sichtbarer Fokus in beiden Themes (AA, 3:1+ gegen beide Hintergruende) */
+.site-nav a:focus-visible,
+.site-nav button:focus-visible,
+.mobile-drawer a:focus-visible,
+.mobile-drawer button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Einheitliche 44px-Tap-Ziele fuer Theme + Menue (alle Viewports) */
+.site-nav .theme-toggle,
+.site-nav .mobile-toggle {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+/* Drawer: vollbreit, grosse Tap-Ziele, eigener Scroll */
+.mobile-drawer[hidden] {
+  display: none !important;
+}
+
+.mobile-drawer {
+  top: var(--nav-h);
+  background: var(--surface);
+  border-top: 1px solid var(--stroke);
+  padding: 12px 20px 32px;
+}
+
+.mobile-drawer.open {
+  display: flex;
+}
+
+.mobile-drawer nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer nav a {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 12px 6px;
+  font-size: 17px;
+}
+
+.mobile-drawer nav a[aria-current="page"] {
+  color: var(--cyan);
+}
+
+.mobile-drawer .drawer-download {
+  min-height: 48px;
+  width: 100%;
+  margin-top: 16px;
+  font-size: 16px;
+  border-bottom: none;
+}
+
+.drawer-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--stroke);
+}
+
+.drawer-langs a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+}
+
+.drawer-langs a.active,
+.drawer-langs a[aria-current="true"] {
+  color: var(--cyan);
+  border-color: rgba(0, 229, 255, 0.35);
+}
+
+/* Mobile 390: nur Logo + Theme + Menue im Header.
+   Sprache + Download wandern in den Drawer. */
+@media (max-width: 760px) {
+  .site-nav .lang-picker {
+    display: none;
+  }
+}
+
+@media (max-width: 1020px) {
+  .site-nav .nav-links {
+    display: none;
+  }
+  .site-nav .mobile-toggle {
+    display: block;
+  }
+}

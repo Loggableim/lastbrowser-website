@@ -4,13 +4,42 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  // --- 1. Mobile Menu Drawer ---
+  // --- 1. Mobile Menu Drawer (a11y: aria-expanded, Escape, Fokus-Rueckgabe, Scroll-Lock) ---
   var mobileToggle = document.querySelector('.mobile-toggle');
   var mobileDrawer = document.querySelector('.mobile-drawer');
   if (mobileToggle && mobileDrawer) {
+    var lastFocus = null;
+    var setDrawer = function(open) {
+      mobileDrawer.classList.toggle('open', open);
+      if (open) {
+        mobileDrawer.removeAttribute('hidden');
+      } else {
+        mobileDrawer.setAttribute('hidden', '');
+      }
+      mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
+      if (open) {
+        lastFocus = document.activeElement;
+        var first = mobileDrawer.querySelector('nav a, nav button');
+        if (first) first.focus();
+      } else if (lastFocus && lastFocus.focus) {
+        lastFocus.focus();
+      }
+    };
     mobileToggle.addEventListener('click', function() {
-      mobileDrawer.classList.toggle('open');
-      mobileToggle.setAttribute('aria-expanded', mobileDrawer.classList.contains('open'));
+      setDrawer(!mobileDrawer.classList.contains('open'));
+    });
+    mobileDrawer.addEventListener('click', function(e) {
+      if (e.target.closest('a')) setDrawer(false);
+    });
+    document.addEventListener('keydown', function(e) {
+      if ((e.key === 'Escape' || e.key === 'Esc') && mobileDrawer.classList.contains('open')) {
+        setDrawer(false);
+        mobileToggle.focus();
+      }
+    });
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 1020 && mobileDrawer.classList.contains('open')) setDrawer(false);
     });
   }
 

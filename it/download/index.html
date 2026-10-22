@@ -23,12 +23,12 @@
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/download-counter.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/docs.css?v=20261022c">
-<script src="/assets/js/theme.js?v=20261022c"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/download-counter.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/docs.css?v=20261023a">
+<script src="/assets/js/theme.js?v=20261023a"></script>
 
 <script type="application/ld+json">
 {
@@ -50,25 +50,23 @@
 <body>
 <a href="#main" class="skip-link">Salta al contenuto principale</a>
 
-<nav>
+<nav class="site-nav" aria-label="Navigazione principale">
   <div class="container inner">
     <a href="/it/" class="logo">
       <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="40" height="40">
       <div><strong>LastBrowser</strong><span>Scarica · v0.1.59</span></div>
     </a>
     <div class="nav-links">
-      <a href="/it/roadmap/">Tabella di marcia</a>
       <a href="/it/features/">Funzionalità</a>
       <a href="/spaces/">Spazi</a>
       <a href="/docs/terminal/">Terminale</a>
       <a href="/hub/">Hub MCP</a>
       <a href="/docs/">Documentazione</a>
       <a href="/it/enterprise/">Enterprise</a>
-      <a href="/it/download/" class="active">Scarica</a>
     </div>
     <div class="nav-actions">
       <div class="lang-picker">
-        <button class="lang-btn" aria-label="Scegli lingua">🇮🇹 IT ▾</button>
+        <button class="lang-btn" aria-haspopup="true" aria-label="Scegli lingua">🇮🇹 IT ▾</button>
         <div class="lang-menu">
           <a href="/download/" data-lang="de">🇩🇪 Deutsch</a>
           <a href="/en/download/" data-lang="en">🇬🇧 English</a>
@@ -80,21 +78,32 @@
         </div>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambia tema">☀️</button>
-      <a href="https://github.com/Loggableim/lastbrowser" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
-      <button class="mobile-toggle" aria-expanded="false" aria-label="Apri menu">☰</button>
+      
+      <button class="mobile-toggle" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Apri menu">☰</button>
     </div>
   </div>
 </nav>
 
-<div class="mobile-drawer">
-  <a href="/it/features/">Funzionalità</a>
-  <a href="/spaces/">Spazi</a>
-  <a href="/docs/terminal/">Terminale</a>
-  <a href="/hub/">Hub MCP</a>
-  <a href="/docs/">Documentazione</a>
-  <a href="/it/enterprise/">Enterprise</a>
-  <a href="/it/download/">Scarica</a>
-  <a href="/it/imprint/">Note Legali</a>
+<div class="mobile-drawer" id="mobile-drawer" hidden>
+  <nav aria-label="Navigazione mobile">
+    <a href="/it/features/">Funzionalità</a>
+    <a href="/spaces/">Spazi</a>
+    <a href="/docs/terminal/">Terminale</a>
+    <a href="/hub/">Hub MCP</a>
+    <a href="/docs/">Documentazione</a>
+    <a href="/it/enterprise/">Enterprise</a>
+    <a href="/it/imprint/">Note Legali</a>
+    <a href="/it/download/" class="btn btn-primary drawer-download">Download</a>
+  </nav>
+    <div class="drawer-langs">
+      <a href="/download/" data-lang="de">🇩🇪 Deutsch</a>
+      <a href="/en/download/" data-lang="en">🇬🇧 English</a>
+      <a href="/es/download/" data-lang="es">🇪🇸 Español</a>
+      <a href="/fr/download/" data-lang="fr">🇫🇷 Français</a>
+      <a href="/it/download/" data-lang="it" aria-current="true">🇮🇹 Italiano</a>
+      <a href="/pt/download/" data-lang="pt">🇵🇹 Português</a>
+      <a href="/ja/download/" data-lang="ja">🇯🇵 日本語</a>
+    </div>
 </div>
 
 <main id="main">
@@ -371,7 +380,7 @@ Get-FileHash -Algorithm SHA256 .\Lastbrowser-0.1.59-x64-setup.exe
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022c"></script>
-<script src="/assets/js/download-counter.js?v=20261022c" defer></script>
+<script src="/assets/js/app.js?v=20261023a"></script>
+<script src="/assets/js/download-counter.js?v=20261023a" defer></script>
 </body>
 </html>

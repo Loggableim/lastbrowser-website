@@ -13,32 +13,30 @@
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
-<script src="/assets/js/theme.js?v=20261022c"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261023a">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261023a">
+<script src="/assets/js/theme.js?v=20261023a"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav>
+<nav class="site-nav" aria-label="Main navigation">
   <div class="container inner">
     <a href="/en/" class="logo">
       <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="40" height="40">
       <div><strong>LastBrowser</strong><span>Imprint · § 5 DDG</span></div>
     </a>
     <div class="nav-links">
-      <a href="/en/roadmap/">Roadmap</a>
       <a href="/en/features/">Features</a>
-      <a href="/spaces/">Spaces</a>
-      <a href="/docs/terminal/">Terminal</a>
-      <a href="/hub/">MCP Hub</a>
-      <a href="/docs/">Docs</a>
+      <a href="/en/spaces/">Spaces</a>
+      <a href="/en/docs/terminal/">Terminal</a>
+      <a href="/en/hub/">MCP Hub</a>
+      <a href="/en/docs/">Docs</a>
       <a href="/en/enterprise/">Enterprise</a>
-      <a href="/en/download/">Download</a>
     </div>
     <div class="nav-actions">
       <div class="lang-picker">
-        <button class="lang-btn" aria-label="Choose language">🇬🇧 EN ▾</button>
+        <button class="lang-btn" aria-haspopup="true" aria-label="Choose language">🇬🇧 EN ▾</button>
         <div class="lang-menu">
           <a href="/imprint/" data-lang="de">🇩🇪 Deutsch</a>
           <a href="/en/imprint/" class="active" data-lang="en">🇬🇧 English</a>
@@ -50,11 +48,33 @@
         </div>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
-      <a href="/en/download/" class="btn btn-primary btn-sm">Download</a>
-      <button class="mobile-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <a href="/en/download/" class="btn nav-download btn-primary btn-sm">Download</a>
+      <button class="mobile-toggle" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open menu">☰</button>
     </div>
   </div>
 </nav>
+
+<div class="mobile-drawer" id="mobile-drawer" hidden>
+  <nav aria-label="Mobile navigation">
+    <a href="/en/features/">Features</a>
+    <a href="/en/spaces/">Spaces</a>
+    <a href="/en/docs/terminal/">Terminal</a>
+    <a href="/en/hub/">MCP Hub</a>
+    <a href="/en/docs/">Docs</a>
+    <a href="/en/enterprise/">Enterprise</a>
+    <a href="/en/imprint/">Imprint</a>
+    <a href="/en/download/" class="btn btn-primary drawer-download">Download</a>
+  </nav>
+    <div class="drawer-langs">
+      <a href="/imprint/" data-lang="de">🇩🇪 Deutsch</a>
+      <a href="/en/imprint/" data-lang="en" aria-current="true">🇬🇧 English</a>
+      <a href="/es/imprint/" data-lang="es">🇪🇸 Español</a>
+      <a href="/fr/imprint/" data-lang="fr">🇫🇷 Français</a>
+      <a href="/it/imprint/" data-lang="it">🇮🇹 Italiano</a>
+      <a href="/pt/imprint/" data-lang="pt">🇵🇹 Português</a>
+      <a href="/ja/imprint/" data-lang="ja">🇯🇵 日本語</a>
+    </div>
+</div>
 
 <main id="main" class="container-narrow" style="padding: 60px 0 90px;">
   <div class="pill-badge">Legal Information</div>
@@ -103,33 +123,33 @@
       <h4>Product</h4>
       <ul>
         <li><a href="/en/features/">Features &amp; Matrix</a></li>
-        <li><a href="/spaces/">Spaces &amp; Isolation</a></li>
-        <li><a href="/docs/terminal/">ConPTY Terminal</a></li>
-        <li><a href="/hub/">Extension &amp; MCP Hub</a></li>
+        <li><a href="/en/spaces/">Spaces &amp; Isolation</a></li>
+        <li><a href="/en/docs/terminal/">ConPTY Terminal</a></li>
+        <li><a href="/en/hub/">Extension &amp; MCP Hub</a></li>
         <li><a href="/en/download/">Download for Windows</a></li>
-        <li><a href="/roadmap/">Roadmap</a></li>
+        <li><a href="/en/roadmap/">Roadmap</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Compare (VS)</h4>
       <ul>
-        <li><a href="/vs/arc/">LastBrowser vs. Arc</a></li>
-        <li><a href="/vs/brave/">LastBrowser vs. Brave</a></li>
-        <li><a href="/vs/chrome/">LastBrowser vs. Chrome</a></li>
-        <li><a href="/vs/edge/">LastBrowser vs. Edge</a></li>
-        <li><a href="/vs/zen/">LastBrowser vs. Zen</a></li>
-        <li><a href="/vs/opera-one/">LastBrowser vs. Opera One</a></li>
+        <li><a href="/en/vs/arc/">LastBrowser vs. Arc</a></li>
+        <li><a href="/en/vs/brave/">LastBrowser vs. Brave</a></li>
+        <li><a href="/en/vs/chrome/">LastBrowser vs. Chrome</a></li>
+        <li><a href="/en/vs/edge/">LastBrowser vs. Edge</a></li>
+        <li><a href="/en/vs/zen/">LastBrowser vs. Zen</a></li>
+        <li><a href="/en/vs/opera-one/">LastBrowser vs. Opera One</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
       <ul>
-        <li><a href="/docs/">Documentation</a></li>
-        <li><a href="/shortcuts/">Keyboard Shortcuts</a></li>
-        <li><a href="/blog/">Engineering Blog</a></li>
-        <li><a href="/security/">Security Whitepaper</a></li>
-        <li><a href="/releases/">Release Archive</a></li>
-        <li><a href="/press/">Press Kit</a></li>
+        <li><a href="/en/docs/">Documentation</a></li>
+        <li><a href="/en/shortcuts/">Keyboard Shortcuts</a></li>
+        <li><a href="/en/blog/">Engineering Blog</a></li>
+        <li><a href="/en/security/">Security Whitepaper</a></li>
+        <li><a href="/en/releases/">Release Archive</a></li>
+        <li><a href="/en/press/">Press Kit</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -153,6 +173,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022c"></script>
+<script src="/assets/js/app.js?v=20261023a"></script>
 </body>
 </html>
