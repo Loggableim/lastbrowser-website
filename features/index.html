@@ -18,10 +18,10 @@
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022b">
-<script src="/assets/js/theme.js?v=20261022b"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
+<script src="/assets/js/theme.js?v=20261022c"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Inhalt springen</a>
@@ -48,16 +48,16 @@
         <div class="lang-menu">
           <a href="/features/" class="active" data-lang="de">🇩🇪 Deutsch</a>
           <a href="/en/features/" data-lang="en">🇬🇧 English</a>
-          <a href="/es/" data-lang="es">🇪🇸 Español</a>
-          <a href="/fr/" data-lang="fr">🇫🇷 Français</a>
-          <a href="/it/" data-lang="it">🇮🇹 Italiano</a>
-          <a href="/pt/" data-lang="pt">🇵🇹 Português</a>
-          <a href="/ja/" data-lang="ja">🇯🇵 日本語</a>
+          <a href="/es/features/" data-lang="es">🇪🇸 Español</a>
+          <a href="/fr/features/" data-lang="fr">🇫🇷 Français</a>
+          <a href="/it/features/" data-lang="it">🇮🇹 Italiano</a>
+          <a href="/pt/features/" data-lang="pt">🇵🇹 Português</a>
+          <a href="/ja/features/" data-lang="ja">🇯🇵 日本語</a>
         </div>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Design umschalten">☀️</button>
       <a href="/download/" class="btn btn-primary btn-sm">Download</a>
-      <button class="mobile-toggle" aria-label="Menü öffnen">☰</button>
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Menü öffnen">☰</button>
     </div>
   </div>
 </nav>
@@ -139,7 +139,7 @@
 
           <!-- Category: Privacy -->
           <tr class="matrix-row" data-category="privacy">
-            <td><strong>100% Local-First (Zero Telemetry)</strong></td>
+            <td><strong>Local-first (Zero Telemetry)</strong></td>
             <td class="highlight-col"><span class="icon-check">✓</span> Ja (%APPDATA%)</td>
             <td><span class="icon-cross">✕</span> Starkes Tracking</td>
             <td><span class="icon-cross">✕</span> Microsoft Telemetrie</td>
@@ -211,8 +211,8 @@
     </div>
 
     <div class="section-header" style="margin-top:80px;">
-      <h2>Neu in Version <span class="grad">0.1.45</span></h2>
-      <p>Version 0.1.45 ist am 5. Oktober 2026 erschienen. Die Beschreibung grenzt geprüfte UI- und Loopbackpfade von offenen Grenzen bei lokaler Modellqualität, RAM-Guard und sauberem Windows ab.</p>
+      <h2>Neu in Version <span class="grad">0.1.58</span></h2>
+      <p>Version 0.1.58 ist am 17. Oktober 2026 erschienen. Die Beschreibung grenzt geprüfte UI- und Loopbackpfade von offenen Grenzen bei lokaler Modellqualität, RAM-Guard und sauberem Windows ab.</p>
     </div>
     <div class="grid-2">
       <div class="feature-card"><span class="badge badge-cyan">In v0.1.52 · UI geprüft</span><h3>Kompakter Chat-Composer</h3><p>AUTO und „Weitere“ halten die Standardansicht kurz; erweiterte Provider- und Auswahlregeln liegen hinter „Erweitert“. AUTO bevorzugt den verfügbaren Orchestrator. Sonst nutzt es frischen Limit-Spielraum nur, wenn er für alle Kandidaten belegt ist, vergleicht danach aktive und kürzliche lokale Anfragen und nutzt die konfigurierte Reihenfolge als Gleichstandsregel. Semantische Qualität optimiert AUTO nicht; die Router-Qualifikation ist offen.</p></div>
@@ -249,8 +249,8 @@
 
       <div class="feature-card">
         <div class="fc-icon green">🤖</div>
-        <h3>3. Nova &amp; Sidekick Engine</h3>
-        <p>Nova bündelt Chat und kuratierte Skills. Sie können verfügbare KI-Anbieter in den Einstellungen konfigurieren oder lokale Ollama-Modelle verwenden. Modellverfügbarkeit und mögliche Kosten hängen vom jeweiligen Anbieter ab.</p>
+        <h3>3. Sidekick Engine</h3>
+        <p>Sidekick bündelt Chat und kuratierte Skills. Sie können verfügbare KI-Anbieter in den Einstellungen konfigurieren oder lokale Ollama-Modelle verwenden. Modellverfügbarkeit und mögliche Kosten hängen vom jeweiligen Anbieter ab.</p>
         <div style="margin-top:16px;">
           <a href="/hub/" class="btn btn-ghost btn-sm">MCP &amp; Skills Hub ➔</a>
         </div>
@@ -275,7 +275,7 @@
         <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="36" height="36">
         <div><strong>LastBrowser</strong><span>AI-Native Browser</span></div>
       </div>
-      <p>Der Webbrowser für Windows und Linux (Linux als Preview) mit nativer KI, 48 Workflows und ConPTY-Terminal. 100% Local-First.</p>
+      <p>Der Webbrowser für Windows und Linux (Linux als Preview) mit nativer KI, 48 Workflows und ConPTY-Terminal. Local-first.</p>
       <div style="margin-top:14px;">
         <span class="footer-contact-highlight">Kontakt: <a href="mailto:rainer@dominik.in" style="color:inherit;text-decoration:underline;">rainer@dominik.in</a></span>
         <nav class="footer-social-links" aria-label="Social media">
@@ -338,6 +338,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022b"></script>
+<script src="/assets/js/app.js?v=20261022c"></script>
 </body>
 </html>

@@ -209,3 +209,121 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   A11y Mini-Patches (P1-3 bis P2-4) — nur Overrides, kein Redesign
+   ========================================================================== */
+
+/* P1-5: sichtbares :focus-visible global (beide Themes, Fallback #00a5c8) */
+:focus-visible {
+  outline: 3px solid var(--accent, #00a5c8);
+  outline-offset: 2px;
+}
+
+/* P1-4: Overflow 390px auf vs-*/spaces fixen */
+.vs-grid {
+  min-width: 0;
+}
+.vs-column {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.vs-feature-item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-wrap: anywhere;
+}
+code {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media (max-width: 768px) {
+  .vs-column pre {
+    white-space: pre-wrap;
+  }
+}
+
+/* P1-3: /features/ Matrix mobil lesbar + TH-Kontrast >= 4.5 (hell + dunkel) */
+.comparison-table-wrapper,
+.matrix-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.comparison-table,
+.matrix-table {
+  width: 100%;
+  min-width: 640px;
+}
+.comparison-table th,
+.matrix-table th {
+  background: #0b1322;
+  color: #f7faff;
+}
+.comparison-table th.highlight-col,
+.matrix-table th.highlight-col {
+  background: rgba(37, 99, 255, 0.18);
+  color: #00e5ff;
+  border-bottom: 2px solid var(--cyan, #00e5ff);
+}
+[data-theme="light"] .comparison-table th,
+[data-theme="light"] .matrix-table th {
+  background: #ffffff;
+  color: #0f172a;
+}
+[data-theme="light"] .comparison-table th.highlight-col,
+[data-theme="light"] .matrix-table th.highlight-col {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-bottom-color: #0369a1;
+}
+
+/* P2-1/P2-3 (light): Docs-Sidebar H4 + a.active, A.roadmap-issue #0369a1 */
+[data-theme="light"] .docs-sidebar h4,
+[data-theme="light"] .docs-sidebar a.active {
+  color: #0369a1;
+}
+[data-theme="light"] a.roadmap-issue {
+  color: #0369a1;
+}
+
+/* P2-2: .copy-btn Kontrast >= 4.5 auf dunklem Code-Block (beide Themes).
+   button.-Prefix: docs.css (spaeter geladen) gewinnt sonst bei gleicher Spezifitaet. */
+button.copy-btn {
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+/* P2-4: Tap-Targets >= 44px nur mobil (<=768px), Desktop-Optik unverändert */
+@media (max-width: 768px) {
+  .theme-toggle,
+  .mobile-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .lang-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  footer a {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+  .copy-btn {
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+  .sc-btn,
+  .filter-btn {
+    min-height: 44px;
+  }
+}

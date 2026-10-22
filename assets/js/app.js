@@ -1,6 +1,6 @@
 /**
  * LastBrowser Web Platform - Main Application Logic
- * Zero Telemetry · High Performance · 100% Local-First
+ * Zero Telemetry · High Performance · Local-first
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var btn = picker.querySelector('.lang-btn');
     var menu = picker.querySelector('.lang-menu');
     if (btn && menu) {
+      btn.setAttribute('aria-expanded', 'false');
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
-        menu.classList.toggle('open');
+        var isOpen = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
       menu.querySelectorAll('a').forEach(function(item) {
         item.addEventListener('click', function() {
@@ -38,7 +40,28 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function() {
     document.querySelectorAll('.lang-menu.open').forEach(function(menu) {
       menu.classList.remove('open');
+      var picker = menu.closest('.lang-picker');
+      if (picker) {
+        var btn = picker.querySelector('.lang-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
     });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      document.querySelectorAll('.lang-menu.open').forEach(function(menu) {
+        menu.classList.remove('open');
+        var picker = menu.closest('.lang-picker');
+        if (picker) {
+          var btn = picker.querySelector('.lang-btn');
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.focus();
+          }
+        }
+      });
+    }
   });
 
   // --- 3. Interactive Screenshot Showcase ---
