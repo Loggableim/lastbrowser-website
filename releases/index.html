@@ -13,16 +13,15 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://lastbrowser.com/releases/">
 <link rel="alternate" hreflang="de" href="https://lastbrowser.com/releases/">
-<link rel="alternate" hreflang="en" href="https://lastbrowser.com/en/releases/">
 <link rel="alternate" hreflang="x-default" href="https://lastbrowser.com/releases/">
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/docs.css?v=20261022b">
-<script src="/assets/js/theme.js?v=20261022b"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/docs.css?v=20261022c">
+<script src="/assets/js/theme.js?v=20261022c"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Inhalt springen</a>
@@ -48,17 +47,17 @@
         <button class="lang-btn" aria-label="Sprache wählen">🇩🇪 DE ▾</button>
         <div class="lang-menu">
           <a href="/releases/" class="active" data-lang="de">🇩🇪 Deutsch</a>
-          <a href="/en/releases/" data-lang="en">🇬🇧 English</a>
-          <a href="/es/releases/" data-lang="es">🇪🇸 Español</a>
-          <a href="/fr/releases/" data-lang="fr">🇫🇷 Français</a>
-          <a href="/it/releases/" data-lang="it">🇮🇹 Italiano</a>
-          <a href="/pt/releases/" data-lang="pt">🇵🇹 Português</a>
-          <a href="/ja/releases/" data-lang="ja">🇯🇵 日本語</a>
+          <a href="/en/" data-lang="en">🇬🇧 English</a>
+          <a href="/es/" data-lang="es">🇪🇸 Español</a>
+          <a href="/fr/" data-lang="fr">🇫🇷 Français</a>
+          <a href="/it/" data-lang="it">🇮🇹 Italiano</a>
+          <a href="/pt/" data-lang="pt">🇵🇹 Português</a>
+          <a href="/ja/" data-lang="ja">🇯🇵 日本語</a>
         </div>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Design umschalten">☀️</button>
       <a href="/download/" class="btn btn-primary btn-sm">Download</a>
-      <button class="mobile-toggle" aria-label="Menü öffnen">☰</button>
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Menü öffnen">☰</button>
     </div>
   </div>
 </nav>
@@ -83,6 +82,8 @@
 
   <div style="max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:30px;">
     <!-- v0.1.47 signed test prerelease; public asset bytes and hashes read back -->
+    <article id="v0.1.59" class="feature-card"><h2>v0.1.59 · 2026-10-22</h2><p>Veröffentlicht am 22. Oktober 2026. Der Installer ist deutlich kleiner (ca. 300 MB statt ca. 610 MB), da Modelldateien nicht mehr mit eingepackt werden. Setup und Portable sind mit einem Certum-Zertifikat signiert; Prüfsummen siehe Downloadseite (SHA-256).</p><a href="/download/">Setup / Portable · SHA-256</a> · <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.59">GitHub-Release</a></article>
+    <article id="v0.1.58" class="feature-card"><h2>v0.1.58 · 2026-10-17</h2><p>Veröffentlicht am 17. Oktober 2026. Beta-Update-Abo mit Hinweis auf unsignierte Daily-Builds; Release-Pipeline für Daily-Beta- und Stable-Kanal; Desktop-Build-Fix und festgezurrte Python-Runtime-Abhängigkeiten für Sidekick. Setup und Portable sind Authenticode-signiert (Certum); Prüfsummen siehe SHA256SUMS.</p><a href="/download/">Setup / Portable · SHA-256</a> · <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.58">GitHub-Release</a></article>
     <article id="v0.1.55" class="feature-card"><h2>v0.1.55 · 2026-10-12</h2><p>Veröffentlicht am 12. Oktober 2026. Standardchat kann während des Starts gestoppt werden; Quickchat zeigt Stop während der Modellsuche. Modellkataloge werden je Profil und Konfiguration wiederverwendet. Bekannte Einschränkungen: Beim ersten Start kann eine schwarze Fläche bis Strg+R erscheinen; die signierte Version ist noch nicht in der VM abgenommen. Eine Verbesserung der Chat-Latenz ist nicht bestätigt.</p><a href="/download/">Setup / Portable · SHA-256</a> · <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.55">GitHub-Release</a></article>
 
     <!-- v0.1.52 release -->
@@ -290,7 +291,7 @@
         <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="36" height="36">
         <div><strong>LastBrowser</strong><span>AI-Native Browser</span></div>
       </div>
-      <p>Der Webbrowser für Windows und Linux (Linux als Preview) mit nativer KI, 48 Workflows und ConPTY-Terminal. 100% Local-First.</p>
+      <p>Der Webbrowser für Windows und Linux (Linux als Preview) mit nativer KI, 48 Workflows und ConPTY-Terminal. Local-first.</p>
       <div style="margin-top:14px;">
         <span class="footer-contact-highlight">Kontakt: <a href="mailto:rainer@dominik.in" style="color:inherit;text-decoration:underline;">rainer@dominik.in</a></span>
         <nav class="footer-social-links" aria-label="Social media">
@@ -353,6 +354,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022b"></script>
+<script src="/assets/js/app.js?v=20261022c"></script>
 </body>
 </html>

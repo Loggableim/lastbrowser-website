@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LastBrowser herunterladen – Offizieller Download für Windows (v0.1.59 Beta)</title>
-<meta name="description" content="Laden Sie LastBrowser für Windows 10 &amp; 11 (64-Bit) herunter. Version 0.1.59 Beta: Setup Installer und Portable Version. 100% Local-First &amp; DSGVO.">
+<meta name="description" content="Laden Sie LastBrowser für Windows 10 &amp; 11 (64-Bit) herunter. Version 0.1.59 Beta: Setup Installer und Portable Version. Local-first &amp; DSGVO.">
 <meta property="og:title" content="LastBrowser herunterladen – Offizieller Windows Download (v0.1.59)">
 <meta property="og:description" content="Schneller, privater Webbrowser für Windows und Linux (Linux als Preview) mit Sidekick, isolierten Spaces und Castlabs Widevine DRM. Jetzt direkt für Windows herunterladen.">
 <meta property="og:type" content="website">
@@ -18,12 +18,12 @@
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/download-counter.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/docs.css?v=20261022b">
-<script src="/assets/js/theme.js?v=20261022b"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/download-counter.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/docs.css?v=20261022c">
+<script src="/assets/js/theme.js?v=20261022c"></script>
 
 <script type="application/ld+json">
 {
@@ -76,7 +76,7 @@
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Design umschalten">☀️</button>
       <a href="https://github.com/Loggableim/lastbrowser" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
-      <button class="mobile-toggle" aria-label="Menü öffnen">☰</button>
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Menü öffnen">☰</button>
     </div>
   </div>
 </nav>
@@ -97,18 +97,19 @@
     <div class="container">
       <div class="pill-badge">Offizieller Windows-Build · v0.1.59 Beta</div>
       <h1>Holen Sie sich den <span class="grad">AI-Browser für Windows</span></h1>
-      <p class="lead">LastBrowser kombiniert einen schnellen Webbrowser für Windows und Linux (Linux als Preview) mit Sidekick, ConPTY-Terminal, Widevine DRM L3 und isolierten Spaces. 100% Local-First auf Ihrem PC.</p>
+      <p class="lead">LastBrowser kombiniert einen schnellen Webbrowser für Windows und Linux (Linux als Preview) mit Sidekick, ConPTY-Terminal, Widevine DRM L3 und isolierten Spaces. Local-first auf Ihrem PC.</p>
       
       <div class="download-counter" data-download-counter data-locale="de" role="status">Downloadzahl derzeit nicht verfügbar.</div>
-      <div class="feature-card" role="note" style="max-width:760px;margin:18px auto 0;text-align:left;"><strong>v0.1.55:</strong> Veröffentlicht am 12. Oktober 2026. Standardchat kann während des Starts gestoppt werden; Quickchat zeigt Stop während der Modellsuche. Modellkataloge werden je Profil und Konfiguration wiederverwendet. Bekannte Einschränkungen: Beim ersten Start kann eine schwarze Fläche bis Strg+R erscheinen; die signierte Version ist noch nicht in der VM abgenommen. Eine Verbesserung der Chat-Latenz ist nicht bestätigt.<br>Setup: 167,267,992 bytes · Portable: 166,904,592 bytes.</div>
-      <div class="feature-card" role="note" style="max-width:760px;margin:12px auto 0;text-align:left;"><strong>v0.1.47 TEST · separate signierte Vorabversion:</strong> Nur zum Testen; keine stabile Veröffentlichung und keine Änderung am v0.1.55-Updatekanal. <a href="https://github.com/Loggableim/lastbrowser/releases/download/test-v0.1.47-20261007-f67320f/Lastbrowser-0.1.47-x64-setup.exe">TEST-Setup herunterladen (174.778.024 Bytes)</a> · <a href="https://github.com/Loggableim/lastbrowser/releases/download/test-v0.1.47-20261007-f67320f/Lastbrowser-0.1.47-x64-portable.exe">TEST-Portable herunterladen (174.415.880 Bytes)</a><br>Setup SHA-256: <code style="overflow-wrap:anywhere;word-break:break-all;">7affb53fb25d9dde379b367805aca6a60e5ce614676918262d276a892e7caef0</code><br>Portable SHA-256: <code style="overflow-wrap:anywhere;word-break:break-all;">0a8d82bfe4d144b5e426a7d1b1fc802779f2ab3ccd6f2e586bfc2fa98d8e6b52</code><br>VM-, Provider- und Zwei-Profil-Abnahme sind offen; nicht Store-zertifiziert.</div>
+      <div class="feature-card" role="note" style="max-width:760px;margin:18px auto 0;text-align:left;"><strong>v0.1.59:</strong> Veröffentlicht am 22. Oktober 2026. Der Installer ist deutlich kleiner (ca. 300 MB statt ca. 610 MB), da Modelldateien nicht mehr mit eingepackt werden. Setup und Portable sind mit einem Certum-Zertifikat signiert; Prüfsummen siehe unten (SHA-256).<br>Setup: 300,020,200 bytes · Portable: 299,666,496 bytes.</div>
+      <div class="feature-card" role="note" style="max-width:760px;margin:18px auto 0;text-align:left;"><strong>v0.1.58:</strong> Veröffentlicht am 17. Oktober 2026. Beta-Update-Abo mit Hinweis auf unsignierte Daily-Builds; Release-Pipeline für Daily-Beta- und Stable-Kanal; Desktop-Build-Fix und festgezurrte Python-Runtime-Abhängigkeiten für Sidekick. Setup und Portable sind Authenticode-signiert (Certum); Prüfsummen siehe SHA256SUMS.<br>Setup: 640,207,744 bytes · Portable: 639,845,984 bytes.</div>
+      <div class="feature-card" role="note" style="max-width:760px;margin:12px auto 0;text-align:left;"><strong>v0.1.47 TEST · separate signierte Vorabversion:</strong> Nur zum Testen; keine stabile Veröffentlichung und keine Änderung am v0.1.59-Updatekanal. <a href="https://github.com/Loggableim/lastbrowser/releases/download/test-v0.1.47-20261007-f67320f/Lastbrowser-0.1.47-x64-setup.exe">TEST-Setup herunterladen (174.778.024 Bytes)</a> · <a href="https://github.com/Loggableim/lastbrowser/releases/download/test-v0.1.47-20261007-f67320f/Lastbrowser-0.1.47-x64-portable.exe">TEST-Portable herunterladen (174.415.880 Bytes)</a><br>Setup SHA-256: <code style="overflow-wrap:anywhere;word-break:break-all;">7affb53fb25d9dde379b367805aca6a60e5ce614676918262d276a892e7caef0</code><br>Portable SHA-256: <code style="overflow-wrap:anywhere;word-break:break-all;">0a8d82bfe4d144b5e426a7d1b1fc802779f2ab3ccd6f2e586bfc2fa98d8e6b52</code><br>VM-, Provider- und Zwei-Profil-Abnahme sind offen; nicht Store-zertifiziert.</div>
       <div class="cta-group">
         <a id="hero-win-download" href="https://github.com/Loggableim/lastbrowser/releases/download/v0.1.59/Lastbrowser-0.1.59-x64-setup.exe" class="btn btn-primary btn-lg">
           ⬇️ Für Windows herunterladen (v0.1.59 Beta .exe) (286.12 MB)</a>
         <a href="#portable" class="btn btn-ghost btn-lg">Portable Version (.exe)</a>
       </div>
       <p id="hero-os-notice" class="sub-cta-note">
-        100% Kostenlos &amp; Local-First · Keine Registrierung erforderlich · Windows 10 &amp; 11 (64-Bit)
+        Kostenlos &amp; Local-first · Keine Registrierung erforderlich · Windows 10 &amp; 11 (64-Bit)
       </p>
       <div style="margin-top:14px;">
         <a href="#" class="open-smartscreen-modal" style="font-size:13px;color:var(--muted);text-decoration:underline;">
@@ -195,7 +196,7 @@
       <div style="display:flex;align-items:center;gap:20px;">
         <div style="width:54px;height:54px;border-radius:14px;background:rgba(124,255,107,0.15);border:1px solid rgba(124,255,107,0.3);display:grid;place-items:center;font-size:26px;">🛡️</div>
         <div>
-          <h4 style="font-size:18px;margin-bottom:4px;">100% Viren- und Malware-geprüft</h4>
+          <h4 style="font-size:18px;margin-bottom:4px;">Auf Viren und Malware geprüft</h4>
           <p style="font-size:14px;color:var(--muted);margin:0;">Prüfen Sie die SHA-256-Prüfsumme und die digitale Signatur der heruntergeladenen Datei.</p>
         </div>
       </div>
@@ -218,7 +219,7 @@
       <div class="step-card">
         <div class="step-number">2</div>
         <h4>KI-Mentalität wählen</h4>
-        <p>Wählen Sie Ihre bevorzugte Nova-Assistant-Mentalität (Pragmatisch, Forschend oder Entwickler) und binden Sie auf Wunsch Keys ein.</p>
+        <p>Wählen Sie Ihre bevorzugte Sidekick-Assistant-Mentalität (Pragmatisch, Forschend oder Entwickler) und binden Sie auf Wunsch Keys ein.</p>
       </div>
 
       <div class="step-card">
@@ -263,7 +264,7 @@
     <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="32" height="32">
     <div class="fb-text">
       <strong>LastBrowser v0.1.59 Beta</strong>
-      <span>Windows 10 &amp; 11 (64-Bit) · 100% Local-First</span>
+      <span>Windows 10 &amp; 11 (64-Bit) · Local-first</span>
     </div>
   </div>
   <a href="https://github.com/Loggableim/lastbrowser/releases/download/v0.1.59/Lastbrowser-0.1.59-x64-setup.exe" class="btn btn-cyan btn-sm">
@@ -331,7 +332,7 @@
         <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="36" height="36">
         <div><strong>LastBrowser</strong><span>AI-Native Browser</span></div>
       </div>
-      <p>Der Webbrowser für Windows und Linux (Linux als Preview) mit nativer KI, 48 Workflows und ConPTY-Terminal. 100% Local-First.</p>
+      <p>Der Webbrowser für Windows und Linux (Linux als Preview) mit nativer KI, 48 Workflows und ConPTY-Terminal. Local-first.</p>
       <div style="margin-top:14px;">
         <span class="footer-contact-highlight">Kontakt: <a href="mailto:rainer@dominik.in" style="color:inherit;text-decoration:underline;">rainer@dominik.in</a></span>
         <nav class="footer-social-links" aria-label="Social media">
@@ -394,7 +395,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022b"></script>
-<script src="/assets/js/download-counter.js?v=20261022b" defer></script>
+<script src="/assets/js/app.js?v=20261022c"></script>
+<script src="/assets/js/download-counter.js?v=20261022c" defer></script>
 </body>
 </html>

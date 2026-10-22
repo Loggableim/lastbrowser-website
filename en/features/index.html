@@ -18,10 +18,10 @@
 
 <link rel="preload" href="/assets/fonts/outfit-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/components.css?v=20261022b">
-<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022b">
-<script src="/assets/js/theme.js?v=20261022b"></script>
+<link rel="stylesheet" href="/assets/css/main.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/components.css?v=20261022c">
+<link rel="stylesheet" href="/assets/css/comparison.css?v=20261022c">
+<script src="/assets/js/theme.js?v=20261022c"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -57,7 +57,7 @@
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
       <a href="/en/download/" class="btn btn-primary btn-sm">Download</a>
-      <button class="mobile-toggle" aria-label="Open menu">☰</button>
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
     </div>
   </div>
 </nav>
@@ -139,7 +139,7 @@
 
           <!-- Category: Privacy -->
           <tr class="matrix-row" data-category="privacy">
-            <td><strong>100% Local-First (Zero Telemetry)</strong></td>
+            <td><strong>Local-first (Zero Telemetry)</strong></td>
             <td class="highlight-col"><span class="icon-check">✓</span> Yes (%APPDATA%)</td>
             <td><span class="icon-cross">✕</span> Heavy Tracking</td>
             <td><span class="icon-cross">✕</span> Microsoft Telemetry</td>
@@ -211,8 +211,8 @@
     </div>
 
     <div class="section-header" style="margin-top:80px;">
-      <h2>New in version <span class="grad">0.1.45</span></h2>
-      <p>Version 0.1.45 was released on October 5, 2026. These notes distinguish checked UI and loopback paths from open local-model quality, RAM-guard, and clean-Windows qualification.</p>
+      <h2>New in version <span class="grad">0.1.59</span></h2>
+      <p>Version 0.1.59 was released on October 22, 2026. The installer is now significantly smaller (~300 MB instead of ~610 MB) as model files are no longer bundled; Setup and Portable are Certum-signed.</p>
     </div>
     <div class="grid-2">
       <div class="feature-card"><span class="badge badge-cyan">v0.1.52 · UI checked</span><h3>Compact chat composer</h3><p>AUTO and “More” keep the default view short; detailed provider and selection policy lives under Advanced. AUTO prefers an eligible configured orchestrator. Otherwise it uses fresh observed limit headroom only when known for every candidate, then compares active and recent local requests, with configured order breaking ties. It does not optimize semantic quality; router qualification remains open.</p></div>
@@ -249,8 +249,8 @@
 
       <div class="feature-card">
         <div class="fc-icon green">🤖</div>
-        <h3>3. Nova &amp; Sidekick Engine</h3>
-        <p>Nova brings chat and curated skills together. Configure available AI providers in settings or use local Ollama models. Model availability and any charges depend on the provider.</p>
+        <h3>3. Sidekick Engine</h3>
+        <p>Sidekick brings chat and curated skills together. Configure available AI providers in settings or use local Ollama models. Model availability and any charges depend on the provider.</p>
         <div style="margin-top:16px;">
           <a href="/hub/" class="btn btn-ghost btn-sm">MCP &amp; Skills Hub ➔</a>
         </div>
@@ -275,7 +275,7 @@
         <img src="/assets/app-icons/nav-icon.ico" alt="LastBrowser" width="36" height="36">
         <div><strong>LastBrowser</strong><span>AI-Native Browser</span></div>
       </div>
-      <p>The web browser for Windows and Linux with native AI, 48 workflows, and ConPTY terminal. 100% Local-First.</p>
+      <p>The web browser for Windows and Linux with native AI, 48 workflows, and ConPTY terminal. Local-first.</p>
       <div style="margin-top:14px;">
         <span class="footer-contact-highlight">Contact: <a href="mailto:rainer@dominik.in" style="color:inherit;text-decoration:underline;">rainer@dominik.in</a></span>
         <nav class="footer-social-links" aria-label="Social media">
@@ -338,6 +338,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/app.js?v=20261022b"></script>
+<script src="/assets/js/app.js?v=20261022c"></script>
 </body>
 </html>
