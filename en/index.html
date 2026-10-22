@@ -63,23 +63,23 @@
       <a href="/hub/">MCP Hub</a>
       <a href="/docs/">Docs</a>
       <a href="/en/enterprise/">Enterprise</a>
-      <a href="/en/download/">Download</a>
+  <a href="/en/download/">Download free for Windows</a>
     </div>
     <div class="nav-actions">
       <div class="lang-picker">
-        <button class="lang-btn" aria-label="Choose language">🇬🇧 EN ▾</button>
+        <button class="lang-btn" aria-label="Choose language"><span aria-hidden="true">🇬🇧</span> EN ▾</button>
         <div class="lang-menu">
-          <a href="/" data-lang="de">🇩🇪 Deutsch</a>
-          <a href="/en/" class="active" data-lang="en">🇬🇧 English</a>
-          <a href="/es/" data-lang="es">🇪🇸 Español</a>
-          <a href="/fr/" data-lang="fr">🇫🇷 Français</a>
-          <a href="/it/" data-lang="it">🇮🇹 Italiano</a>
-          <a href="/pt/" data-lang="pt">🇵🇹 Português</a>
-          <a href="/ja/" data-lang="ja">🇯🇵 日本語</a>
+          <a href="/" data-lang="de"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+          <a href="/en/" class="active" data-lang="en"><span aria-hidden="true">🇬🇧</span> English</a>
+          <a href="/es/" data-lang="es"><span aria-hidden="true">🇪🇸</span> Español</a>
+          <a href="/fr/" data-lang="fr"><span aria-hidden="true">🇫🇷</span> Français</a>
+          <a href="/it/" data-lang="it"><span aria-hidden="true">🇮🇹</span> Italiano</a>
+          <a href="/pt/" data-lang="pt"><span aria-hidden="true">🇵🇹</span> Português</a>
+          <a href="/ja/" data-lang="ja"><span aria-hidden="true">🇯🇵</span> 日本語</a>
         </div>
       </div>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
-      <a href="/en/download/" class="btn btn-primary btn-sm">Download (.exe)</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark theme"><span aria-hidden="true">☀️</span></button>
+      <a href="/en/download/" class="btn btn-primary btn-sm btn-stack">Download free for Windows<small class="btn-sub"><span data-lastbrowser-version>v0.1.58 Beta</span></small></a>
       <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </div>
   </div>
@@ -100,16 +100,17 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="pill-badge">🚀 <span data-lastbrowser-version>v0.1.58</span> Released · ConPTY Terminal &amp; Spaces</div>
-      <h1>The AI-Native Browser for Windows. <span class="grad">100% Local-First.</span></h1>
+      <div class="pill-badge"><span aria-hidden="true">🚀</span> <span data-lastbrowser-version>v0.1.58 Beta</span> is here</div>
+      <h1>One browser for shopping, streaming and shipping code.</h1>
       <p class="lead">
-        Not just another web wrapper. LastBrowser is a fast browser for Windows and Linux (Linux preview) with Sidekick Copilot, 48 curated agentic workflows, embedded ConPTY Windows terminal, Castlabs Widevine DRM L3, and true session isolation in Spaces.
+        Sidekick helps you find things and get tasks done, and power users get 48 agentic workflows and a real Windows terminal.
       </p>
 
-      <div class="download-counter" data-download-counter data-locale="en" role="status">Download count is currently unavailable.</div>
+      <div class="download-counter" data-download-counter data-locale="en" role="status" hidden></div>
+      <p class="dl-fallback" data-download-fallback>Free · No account</p>
       <div class="cta-group">
-        <a href="/en/download/" class="btn btn-primary btn-lg">
-          ⬇️ Download for Windows (<span data-lastbrowser-version>v0.1.58</span>)
+        <a href="/en/download/" class="btn btn-primary btn-lg btn-stack">
+          <span><span aria-hidden="true">⬇️</span> Download free for Windows</span><small class="btn-sub"><span data-lastbrowser-version>v0.1.58 Beta</span></small>
         </a>
         <a href="/en/features/" class="btn btn-ghost btn-lg">Explore Features</a>
       </div>
@@ -122,22 +123,22 @@
     <div class="container showcase-container">
       <div class="showcase-nav">
         <button class="sc-btn active" data-img="/assets/screenshots/store-screen-1-sidebar-spaces.png" data-title="Vertical Sidebar &amp; Spaces" data-desc="Vertical tab rail with clear visual space partitioning, web app pins, and audio indicators.">
-          🪐 Vertical Sidebar &amp; Spaces
+          <span aria-hidden="true">🪐</span> Vertical Sidebar &amp; Spaces
         </button>
         <button class="sc-btn" data-img="/assets/screenshots/store-screen-2-copilot-splitview.png" data-title="Sidekick Copilot in Split-View" data-desc="Work in a 70/30 split view: Nova extracts web insights, writes code, and summarizes research papers.">
-          🤖 Sidekick Split-View
+          <span aria-hidden="true">🤖</span> Sidekick Split-View
         </button>
         <button class="sc-btn" data-img="/assets/screenshots/store-screen-4-conpty-terminal.png" data-title="Embedded ConPTY PowerShell Terminal" data-desc="Native Windows pseudo-console in the sidebar: run Git, SSH, Python, npm, and Terminal Doctor.">
-          💻 ConPTY Terminal
+          <span aria-hidden="true">💻</span> ConPTY Terminal
         </button>
         <button class="sc-btn" data-img="/assets/screenshots/store-screen-3-tab-intelligence.png" data-title="Tab Intelligence &amp; Discarding" data-desc="Automatic memory discarding for inactive tabs saves up to 60% RAM without interrupting background audio.">
-          ⚡ Tab Intelligence
+          <span aria-hidden="true">⚡</span> Tab Intelligence
         </button>
         <button class="sc-btn" data-img="/assets/screenshots/store-screen-5-webextensions.png" data-title="Unified Extension &amp; MCP Hub" data-desc="Chrome MV3 WebExtensions combined with 48 Model Context Protocol (MCP) agentic workflows.">
-          🧩 Extension &amp; MCP Hub
+          <span aria-hidden="true">🧩</span> Extension &amp; MCP Hub
         </button>
         <button class="sc-btn" data-img="/assets/screenshots/store-screen-6-privacy-shield.png" data-title="Local-First Privacy Shield" data-desc="Zero involuntary telemetry. Passwords, cookies, and API keys are stored encrypted in %APPDATA%\Lastbrowser.">
-          🛡️ Privacy Shield
+          <span aria-hidden="true">🛡️</span> Privacy Shield
         </button>
       </div>
 
@@ -150,7 +151,7 @@
           </div>
           <div class="omnibox-mock">
             <span>https://lastbrowser.com/workspace/spaces/active</span>
-            <span class="omnibox-shield">🔒 100% Local-First · DPAPI Encrypted</span>
+            <span class="omnibox-shield"><span aria-hidden="true">🔒</span> 100% Local-First · DPAPI Encrypted</span>
           </div>
           <div style="font-size:12px;color:var(--muted);">LastBrowser Win32 Shell</div>
         </div>
@@ -168,56 +169,72 @@
     </div>
   </section>
 
+  <!-- Benefit Bar -->
+  <section class="container benefit-band" aria-label="Benefits">
+    <ul class="benefit-bar">
+      <li>Browse faster.</li>
+      <li>Get help instantly.</li>
+      <li>Stay private.</li>
+    </ul>
+    <p class="benefit-note">Ask Sidekick anything while you surf, keep work and private tabs in separate spaces, and stream your favourite shows. Free for Windows 10 and 11, Linux preview.</p>
+  </section>
+
   <!-- Features Grid Section -->
   <section class="container" style="padding: 80px 0 60px;">
     <div class="section-header">
-      <h2>Engineered for Developers, Creators &amp; Power Users</h2>
+      <h2 class="home-solid-title">Engineered for Developers, Creators &amp; Power Users</h2>
       <p>Discover why LastBrowser is much more than a standard browser: a multi-tool workstation for Windows.</p>
     </div>
 
     <div class="grid-3">
       <div class="feature-card">
-        <div class="fc-icon blue">💻</div>
+        <div class="fc-icon blue" aria-hidden="true">💻</div>
         <h3>Native ConPTY Terminal</h3>
         <p>A true Windows pseudo-console directly inside the browser rail (<code>Ctrl+\`</code>). Run PowerShell, CMD, Git, npm, Python, or local Ollama models without leaving your flow.</p>
         <span class="badge badge-cyan" style="margin-top:14px;">Windows Native</span>
       </div>
 
       <div class="feature-card">
-        <div class="fc-icon purple">🪐</div>
+        <div class="fc-icon purple" aria-hidden="true">🪐</div>
         <h3>Multi-Account Spaces</h3>
         <p>Fully partitioned cookie jars, caches, and storage via <code>persist:profile:space</code>. Seamlessly switch between personal and work accounts inside the same window.</p>
         <span class="badge badge-purple" style="margin-top:14px;">True Session Isolation</span>
       </div>
 
       <div class="feature-card">
-        <div class="fc-icon pink">🎬</div>
+        <div class="fc-icon pink" aria-hidden="true">🎬</div>
         <h3>Castlabs Widevine DRM L3</h3>
         <p>Full HD streaming playback for Spotify, Netflix, Disney+, and Prime Video powered by Castlabs Electron Widevine CDM integration.</p>
         <span class="badge badge-cyan" style="margin-top:14px;">HD Streaming Ready</span>
       </div>
 
       <div class="feature-card">
-        <div class="fc-icon green">🤖</div>
+        <div class="fc-icon green" aria-hidden="true">🤖</div>
         <h3>Sidekick &amp; BYOK</h3>
         <p>Connect supported AI providers with your own credentials, or use local Ollama models. Provider availability and any charges depend on the service.</p>
         <span class="badge badge-green" style="margin-top:14px;">Bring Your Own Key</span>
       </div>
 
       <div class="feature-card">
-        <div class="fc-icon yellow">⚡</div>
+        <div class="fc-icon yellow" aria-hidden="true">⚡</div>
         <h3>48 Agentic Workflows &amp; MCP</h3>
         <p>Curated skills for scientific paper summarization, OpenAPI extraction, regex debugging, and 1-click external MCP servers (PostgreSQL, Filesystem).</p>
         <span class="badge badge-yellow" style="margin-top:14px;">Model Context Protocol</span>
       </div>
 
       <div class="feature-card">
-        <div class="fc-icon blue">🛡️</div>
+        <div class="fc-icon blue" aria-hidden="true">🛡️</div>
         <h3>Zero Involuntary Telemetry</h3>
         <p>Your browsing history, tabs, and credentials never leave your PC. Everything stays local in <code>%APPDATA%\Lastbrowser</code>, protected by Windows DPAPI.</p>
         <span class="badge badge-cyan" style="margin-top:14px;">100% GDPR &amp; Privacy</span>
       </div>
     </div>
+  </section>
+
+  <!-- Privacy Section -->
+  <section class="container privacy-band" aria-label="Privacy">
+    <h2 class="home-solid-title">Your browser. Your PC. Your data. Local-first.</h2>
+    <p>LastBrowser is a fast browser with an AI assistant that can run locally. No account, no tracking, and separate spaces so work and private life never mix.</p>
   </section>
 
   <!-- CTA Banner -->
@@ -226,7 +243,7 @@
       <h2>Ready for the Next Evolution of Browsing?</h2>
       <p>Download LastBrowser today for Windows 10 &amp; 11 and experience the future of local-first AI productivity.</p>
       <div class="cta-group">
-        <a href="/en/download/" class="btn btn-primary btn-lg">Download for Free</a>
+        <a href="/en/download/" class="btn btn-primary btn-lg btn-stack"><span>Download free for Windows</span><small class="btn-sub"><span data-lastbrowser-version>v0.1.58 Beta</span></small></a>
         <a href="/en/enterprise/" class="btn btn-ghost btn-lg">Commercial Licensing</a>
       </div>
       <p class="sub-cta-note" style="margin-top:14px;">Business inquiries &amp; fleet rollout: <strong>rainer@dominik.in</strong></p>
@@ -257,7 +274,7 @@
         <li><a href="/spaces/">Spaces &amp; Isolation</a></li>
         <li><a href="/docs/terminal/">ConPTY Terminal</a></li>
         <li><a href="/hub/">Extension &amp; MCP Hub</a></li>
-        <li><a href="/en/download/">Download for Windows</a></li>
+        <li><a href="/en/download/">Download free for Windows</a></li>
         <li><a href="/roadmap/">Roadmap</a></li>
       </ul>
     </div>
