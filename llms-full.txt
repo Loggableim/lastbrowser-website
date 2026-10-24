@@ -39,7 +39,7 @@ Sidekick operates in a 70/30 split view alongside web content:
 ### 3.4 Castlabs Electron Widevine DRM L3
 LastBrowser integrates Castlabs Electron to support Widevine CDM v4.10+ on Windows 10 & 11, passing DRM verification for streaming platforms.
 
-## 4. Privacy, Security & Local-First Guarantees
+## 4. Privacy, Security & Local-first Guarantees
 - **Data Location:** Stored exclusively in `%APPDATA%\Lastbrowser`.
 - **Credential Storage:** Windows Data Protection API (DPAPI) encrypts tokens and API keys locally.
 - **Zero Involuntary Telemetry:** No tracking pixels, Google Analytics, or involuntary diagnostic reporting.
