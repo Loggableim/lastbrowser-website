@@ -56,6 +56,7 @@
      pauschal mit einem dunklen Overlay ueberzogen wird (siehe Fix 2026-10-24). */
   --footer-bg: rgba(7, 10, 18, 0.72);
   --footer-fg: #AAB4C6;
+  --footer-accent: #00E5FF;
   --footer-link-hover: #00E5FF;
   --footer-contact-fg: #00E5FF;
   --footer-contact-bg: rgba(0, 229, 255, 0.08);
@@ -92,6 +93,7 @@
      Overlay. Werte liefern >= 4.5:1 fuer --footer-fg/#0369a1 auf --footer-bg. */
   --footer-bg: rgba(241, 245, 249, 0.82);
   --footer-fg: #475569;
+  --footer-accent: #0369a1;
   --footer-link-hover: #0369a1;
   --footer-contact-fg: #0369a1;
   --footer-contact-bg: rgba(2, 132, 199, 0.08);
