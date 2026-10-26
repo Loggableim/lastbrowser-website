@@ -1,4 +1,4 @@
-const LASTBROWSER_VERSION = "v0.1.59";
+const LASTBROWSER_VERSION = "v0.1.60";
 
 document.querySelectorAll("[data-lastbrowser-version]").forEach((element) => {
   element.textContent = `${LASTBROWSER_VERSION} Beta`;
