@@ -177,6 +177,55 @@
       </div>
     </div>
 
+    <!-- Linux Downloads (Preview) -->
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="feature-card">
+        <span class="badge badge-purple" style="margin-bottom:14px;">Linux · Vista previa</span>
+        <h2>AppImage (x64)</h2>
+        <p class="text-muted">Un solo archivo ejecutable sin instalación. Vista previa para Linux (x64).</p>
+        <ul style="list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <li><span class="text-green">✓</span> Sin instalación ni permisos de root</li>
+          <li><span class="text-green">✓</span> Un solo archivo de imagen, listo para ejecutar</li>
+        </ul>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:14px;">
+          <!-- LINUX-ASSETS: switch href to /releases/download/v0.1.60/<file> once uploaded -->
+          <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.60" class="btn btn-cyan btn-lg">
+            Compilaciones Linux en GitHub (v0.1.60)</a>
+          <p style="font-size:13px;color:var(--muted);margin:0;">Nombre de archivo previsto: <code>Lastbrowser-0.1.60-x86_64.AppImage</code></p>
+          <div class="code-block" style="margin:0;">
+            <div class="code-header">
+              <span>Inicio en Linux</span>
+              <button class="copy-btn" data-copy="chmod +x Lastbrowser-0.1.60-x86_64.AppImage &amp;&amp; ./Lastbrowser-0.1.60-x86_64.AppImage">Copiar</button>
+            </div>
+            <pre style="padding:10px;font-size:11px;overflow-x:auto;"><code>chmod +x Lastbrowser-0.1.60-x86_64.AppImage &amp;&amp; ./Lastbrowser-0.1.60-x86_64.AppImage</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <span class="badge badge-purple" style="margin-bottom:14px;">Linux · Vista previa</span>
+        <h2>tar.gz (x64)</h2>
+        <p class="text-muted">Archivo para instalación manual o scripts propios (Linux x64, vista previa).</p>
+        <ul style="list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <li><span class="text-green">✓</span> Descomprimir y ejecutar directamente</li>
+          <li><span class="text-green">✓</span> Sin permisos de root; colócalo en cualquier carpeta</li>
+        </ul>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:14px;">
+          <!-- LINUX-ASSETS: switch href to /releases/download/v0.1.60/<file> once uploaded -->
+          <a href="https://github.com/Loggableim/lastbrowser/releases/tag/v0.1.60" class="btn btn-ghost btn-lg">
+            Compilaciones Linux en GitHub (v0.1.60)</a>
+          <p style="font-size:13px;color:var(--muted);margin:0;">Nombre de archivo previsto: <code>Lastbrowser-0.1.60-x64.tar.gz</code></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- macOS (coming soon, no link) -->
+    <div class="feature-card" style="margin-top:20px;">
+      <span class="badge" style="margin-bottom:14px;">En desarrollo (Apple Silicon e Intel)</span>
+      <h2>macOS – Próximamente</h2>
+      <p class="text-muted">Se está desarrollando una versión para Mac con procesadores Apple Silicon e Intel. Por ahora no hay descarga disponible.</p>
+    </div>
+
     <div class="beta-download-aside" style="margin-top:14px;padding:0 2px;">
       <p style="font-size:13px;color:var(--muted);line-height:1.55;margin:0;">
         <strong style="font-weight:600;color:var(--text-secondary);font-size:13px;">Beta 0.1.57-demo.4</strong>
@@ -298,11 +347,11 @@ d3d9b4a34b067bf84ef11f10db24efb3392313e8b5385a8fc006d0eb6c27b83e
 <div class="modal-backdrop" id="waitlist-modal" onclick="if(event.target===this)closeWaitlistModal()">
   <div class="modal-card">
     <div class="modal-header">
-      <h3>LastBrowser para macOS y Linux</h3>
+      <h3>LastBrowser para macOS</h3>
       <button class="modal-close" onclick="closeWaitlistModal()">✕</button>
     </div>
     <p style="color:var(--muted);font-size:14px;margin-bottom:16px;">
-      LastBrowser está desarrollado nativamente para Windows 10 y 11. ¿Te gustaría recibir un aviso cuando publiquemos para tu sistema operativo?
+      LastBrowser está optimizado para Windows 10 y 11. Las compilaciones para Linux (vista previa) figuran en el área de descargas. Estamos trabajando en una versión para macOS (Apple Silicon e Intel). ¿Te gustaría recibir un aviso cuando publiquemos para tu sistema operativo?
     </p>
     <form onsubmit="event.preventDefault();alert('¡Gracias! Te avisaremos en cuanto esté disponible.');closeWaitlistModal();">
       <input type="email" placeholder="tu-correo@ejemplo.com" required style="width:100%;padding:12px 14px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:#fff;margin-bottom:14px;">
