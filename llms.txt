@@ -4,7 +4,7 @@
 
 ## Core Pillars
 - **Platform:** Windows 10 & 11 (x64) native desktop application.
-- **Privacy & Security:** 100% Local-first. Zero telemetry. All tabs, cookies, and keys stored in `%APPDATA%\Lastbrowser` with Windows DPAPI encryption.
+- **Privacy & Security:** 100% Local-first. Zero telemetry. All tabs and cookies stored in `%APPDATA%\Lastbrowser`; API keys stored locally in plaintext in `~/.sidekick/.env` (not encrypted).
 - **AI Integration:** Configure available AI providers in the app settings or use local Ollama models. Provider availability and costs depend on the service.
 - **Spaces:** Strict session isolation (`persist:profile:space`) separating cookies, cache, and logins per Space.
 - **ConPTY Terminal:** Native Windows pseudo-console embedded in the browser sidebar.

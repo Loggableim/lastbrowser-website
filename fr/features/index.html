@@ -144,7 +144,7 @@
       <div class="feature-card">
         <div class="fc-icon blue">🛡️</div>
         <h3>Confidentialité Local-first</h3>
-        <p>Vos mots de passe, historique et clés d'API ne transitent jamais par des serveurs tiers. Tout reste stocké en local dans <code>%APPDATA%\Lastbrowser</code> chiffré par DPAPI.</p>
+        <p>Vos mots de passe, historique et clés d'API ne transitent jamais par des serveurs tiers. Tout reste stocké en local dans <code>%APPDATA%\Lastbrowser</code>; les clés d’API sont en clair dans <code>~/.sidekick/.env</code>, sans chiffrement.</p>
       </div>
     </div>
   </section>
@@ -213,14 +213,6 @@
             <td><span class="cross">✗</span> Télémétrie étendue Microsoft</td>
             <td><span class="check">✓</span> Approche privée</td>
             <td><span class="cross">✗</span> Dépendance Cloud Sync</td>
-          </tr>
-          <tr data-category="privacy">
-            <td><strong>Chiffrement DPAPI des Clés</strong></td>
-            <td class="highlight"><span class="check">✓</span> Chiffrement natif Windows</td>
-            <td><span class="cross">✗</span> Lié au compte Google</td>
-            <td><span class="cross">✗</span> Synchronisé sur le cloud</td>
-            <td><span class="check">✓</span> Local</td>
-            <td><span class="cross">✗</span> Cloud Firebase</td>
           </tr>
           <tr data-category="privacy">
             <td><strong>Espaces aux Cookies Cloisonnés</strong></td>
@@ -329,7 +321,7 @@
         <li><a href="/docs/">Documentation</a></li>
         <li><a href="/shortcuts/">Raccourcis Clavier</a></li>
         <li><a href="/blog/">Blog d'Ingénierie</a></li>
-        <li><a href="/security/">Livre Blanc Sécurité &amp; DPAPI</a></li>
+        <li><a href="/security/">Livre Blanc Sécurité</a></li>
         <li><a href="/releases/">Archive des Versions</a></li>
         <li><a href="/press/">Kit Presse</a></li>
       </ul>

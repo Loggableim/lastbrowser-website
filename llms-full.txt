@@ -41,7 +41,7 @@ LastBrowser integrates Castlabs Electron to support Widevine CDM v4.10+ on Windo
 
 ## 4. Privacy, Security & Local-first Guarantees
 - **Data Location:** Stored exclusively in `%APPDATA%\Lastbrowser`.
-- **Credential Storage:** Windows Data Protection API (DPAPI) encrypts tokens and API keys locally.
+- **Credential Storage:** API keys are stored locally in plaintext in `~/.sidekick/.env` and are not encrypted.
 - **Zero Involuntary Telemetry:** No tracking pixels, Google Analytics, or involuntary diagnostic reporting.
 - **Store Compliance:** Certified for Microsoft Store submission under Policy 10.2 (AI response reporting & user feedback mechanisms).
 

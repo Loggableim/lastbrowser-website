@@ -127,7 +127,7 @@
         <ul>
           <li>Sidekick Copilot mit anpassbarer Mentalität und Rollenkonfiguration.</li>
           <li>Konfigurierbare KI-Provider und lokale Ollama-Modelle für Sidekick.</li>
-          <li>Lokale DPAPI-Verschlüsselung aller API-Keys im Windows Credential Manager.</li>
+          <li>Lokale Speicherung aller API-Keys (Klartext in ~/.sidekick/.env, nicht verschlüsselt).</li>
         </ul>
       ]]></description>
     </item>

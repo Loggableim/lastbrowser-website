@@ -144,7 +144,7 @@
       <div class="feature-card">
         <div class="fc-icon blue">🛡️</div>
         <h3>Privacy Local-first</h3>
-        <p>Password, cronologia e token API non transitano mai su server cloud esterni. Tutto risiede in locale in <code>%APPDATA%\Lastbrowser</code> protetto da crittografia DPAPI.</p>
+        <p>Password, cronologia e token API non transitano mai su server cloud esterni. Tutto risiede in locale in <code>%APPDATA%\Lastbrowser</code>; le chiavi API sono in chiaro in <code>~/.sidekick/.env</code>, non cifrate.</p>
       </div>
     </div>
   </section>
@@ -213,14 +213,6 @@
             <td><span class="cross">✗</span> Telemetria estesa Microsoft</td>
             <td><span class="check">✓</span> Approccio privato</td>
             <td><span class="cross">✗</span> Dipendenza da Cloud Sync</td>
-          </tr>
-          <tr data-category="privacy">
-            <td><strong>Crittografia DPAPI delle Credenziali</strong></td>
-            <td class="highlight"><span class="check">✓</span> Crittografia nativa Windows</td>
-            <td><span class="cross">✗</span> Legata all'account Google</td>
-            <td><span class="cross">✗</span> Sincronizzata in cloud</td>
-            <td><span class="check">✓</span> Locale</td>
-            <td><span class="cross">✗</span> Cloud Firebase</td>
           </tr>
           <tr data-category="privacy">
             <td><strong>Spazi con Cookie Isolati</strong></td>
@@ -329,7 +321,7 @@
         <li><a href="/docs/">Documentazione</a></li>
         <li><a href="/shortcuts/">Scorciatoie da Tastiera</a></li>
         <li><a href="/blog/">Blog Tecnico</a></li>
-        <li><a href="/security/">Sicurezza &amp; DPAPI</a></li>
+        <li><a href="/security/">Sicurezza</a></li>
         <li><a href="/releases/">Archivio Versioni</a></li>
         <li><a href="/press/">Cartella Stampa</a></li>
       </ul>

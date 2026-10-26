@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Security &amp; Privacy Whitepaper – LastBrowser</title>
-<meta name="description" content="LastBrowser security architecture: multi-process sandboxing, Windows DPAPI encryption in %APPDATA%, zero telemetry and Microsoft Store compliance.">
+<meta name="description" content="LastBrowser security architecture: multi-process sandboxing, zero telemetry and Microsoft Store compliance.">
 <meta property="og:title" content="LastBrowser Security Whitepaper">
-<meta property="og:description" content="Full disclosure: multi-process isolation, local encryption and GDPR-compliant privacy.">
+<meta property="og:description" content="Full disclosure: multi-process isolation, local storage and GDPR-compliant privacy.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lastbrowser.com/en/security/">
 <meta property="og:image" content="https://lastbrowser.com/assets/logos/lastbrowser-logo-primary-dark-card.png">
@@ -29,7 +29,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Security & Privacy Whitepaper – LastBrowser",
-  "description": "LastBrowser security architecture: multi-process sandboxing, Windows DPAPI encryption in %APPDATA%, zero telemetry and Microsoft Store compliance.",
+  "description": "LastBrowser security architecture: multi-process sandboxing, zero telemetry and Microsoft Store compliance.",
   "url": "https://lastbrowser.com/en/security/",
   "inLanguage": "en"
 }
@@ -111,9 +111,9 @@
 
   <div class="feature-card" style="margin-bottom: 30px;">
     <div class="fc-icon purple">🔑</div>
-    <h3>2. Local DPAPI encryption</h3>
+    <h3>2. Local API key storage</h3>
     <p>
-      Sensitive credentials are stored locally in <code>%APPDATA%\Lastbrowser</code>. Storage details depend on the credential type and the configured integration.
+      API keys are stored locally in plaintext in <code>~/.sidekick/.env</code> and are not encrypted. Storage details for other credentials depend on the credential type and the configured integration.
     </p>
   </div>
 

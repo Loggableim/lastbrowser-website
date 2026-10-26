@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Security &amp; Privacy Whitepaper – LastBrowser</title>
-<meta name="description" content="Sicherheitsarchitektur von LastBrowser: Multi-Process Sandboxing, Windows DPAPI Verschlüsselung in %APPDATA%, Zero Telemetry und Microsoft Store Compliance.">
+<meta name="description" content="Sicherheitsarchitektur von LastBrowser: Multi-Process Sandboxing, Zero Telemetry und Microsoft Store Compliance.">
 <meta property="og:title" content="LastBrowser Security Whitepaper">
-<meta property="og:description" content="Vollständige Offenlegung: Multi-Process Isolation, lokale Verschlüsselung und Datenschutz nach DSGVO.">
+<meta property="og:description" content="Vollständige Offenlegung: Multi-Process Isolation, lokale Speicherung und Datenschutz nach DSGVO.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lastbrowser.com/security/">
 <meta property="og:image" content="https://lastbrowser.com/assets/logos/lastbrowser-logo-primary-dark-card.png">
@@ -100,9 +100,9 @@
 
   <div class="feature-card" style="margin-bottom: 30px;">
     <div class="fc-icon purple">🔑</div>
-    <h3>2. Lokale DPAPI-Verschlüsselung</h3>
+    <h3>2. Lokale API-Key-Speicherung</h3>
     <p>
-      Sensible Zugangsdaten werden lokal in <code>%APPDATA%\Lastbrowser</code> geschützt. Details zur Speicherung hängen vom jeweiligen Zugangstyp und der konfigurierten Integration ab.
+      API-Keys werden lokal im Klartext in <code>~/.sidekick/.env</code> gespeichert und sind nicht verschlüsselt. Details zur Speicherung weiterer Zugangsdaten hängen vom jeweiligen Zugangstyp und der konfigurierten Integration ab.
     </p>
   </div>
 

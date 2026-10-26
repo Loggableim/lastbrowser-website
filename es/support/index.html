@@ -54,7 +54,7 @@
       "name": "¿Envía LastBrowser datos de navegación a la nube?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. LastBrowser es Local-first. Todo tu historial de navegación, cookies, contraseñas y claves de API se almacenan cifrados exclusivamente en tu equipo local bajo %APPDATA%\\Lastbrowser."
+        "text": "No. LastBrowser es Local-first. Todo tu historial de navegación, cookies y contraseñas se almacenan exclusivamente en tu equipo local bajo %APPDATA%\\Lastbrowser. Las claves de API se guardan en texto plano en ~/.sidekick/.env, sin cifrar."
       }
     },
     {
@@ -152,7 +152,7 @@
 
       <div class="feature-card">
         <h3>¿Envía LastBrowser mis datos o historial a servidores en la nube?</h3>
-        <p>No. LastBrowser se basa en un principio 100% <strong>Local-first</strong>. No hay telemetría involuntaria ni perfiles en servidores de terceros. Todo se guarda en tu disco local bajo <code>%APPDATA%\Lastbrowser</code> protegido por Windows DPAPI.</p>
+        <p>No. LastBrowser se basa en un principio 100% <strong>Local-first</strong>. No hay telemetría involuntaria ni perfiles en servidores de terceros. Todo se guarda en tu disco local bajo <code>%APPDATA%\Lastbrowser</code>. Las claves de API se guardan en texto plano en <code>~/.sidekick/.env</code>, sin cifrar.</p>
       </div>
 
       <div class="feature-card">
@@ -234,7 +234,7 @@
         <li><a href="/docs/">Documentación</a></li>
         <li><a href="/shortcuts/">Atajos de Teclado</a></li>
         <li><a href="/blog/">Blog de Ingeniería</a></li>
-        <li><a href="/security/">Seguridad y DPAPI</a></li>
+        <li><a href="/security/">Seguridad</a></li>
         <li><a href="/releases/">Archivo de Versiones</a></li>
         <li><a href="/press/">Kit de Prensa</a></li>
       </ul>
