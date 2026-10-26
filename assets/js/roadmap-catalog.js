@@ -26,6 +26,8 @@ export const roadmapCatalog = [
   ['smart-tab-groups', 'Tab-Gruppierung nach Inhalt'],
   ['space-context-transfer', 'Kontextübergabe zwischen Spaces'],
   ['space-rules', 'Space-Regeln'],
+  ['encrypted-spaces', 'Verschlüsselte Spaces'],
+  ['failed-login-wipe', 'Automatische Löschung nach Fehlversuchen'],
   ['canva-presentations', 'Präsentationen über Canva MCP'],
   ['space-media-library', 'Medienbibliothek pro Space'],
   ['accessible-content', 'Barrierefreie Webseiten und Inhalte'],
