@@ -144,7 +144,7 @@
       <div class="feature-card">
         <div class="fc-icon blue">🛡️</div>
         <h3>100% ローカルファーストのプライバシー</h3>
-        <p>パスワード、閲覧履歴、APIトークンが外部サーバーに送信されることはありません。<code>%APPDATA%\Lastbrowser</code>にDPAPIで暗号化保護されます。</p>
+        <p>パスワード、閲覧履歴、APIトークンが外部サーバーに送信されることはありません。<code>%APPDATA%\Lastbrowser</code>に保存されます。APIキーは<code>~/.sidekick/.env</code>にプレーンテキストで保存され、暗号化されていません。</p>
       </div>
     </div>
   </section>
@@ -213,14 +213,6 @@
             <td><span class="cross">✗</span> 広範なMSテレメトリ</td>
             <td><span class="check">✓</span> プライバシー志向</td>
             <td><span class="cross">✗</span> クラウド同期依存</td>
-          </tr>
-          <tr data-category="privacy">
-            <td><strong>Windows DPAPI 秘密鍵暗号化</strong></td>
-            <td class="highlight"><span class="check">✓</span> Windowsネイティブ暗号化</td>
-            <td><span class="cross">✗</span> Googleアカウント依存</td>
-            <td><span class="cross">✗</span> クラウド同期</td>
-            <td><span class="check">✓</span> ローカル保存</td>
-            <td><span class="cross">✗</span> Firebase Cloud</td>
           </tr>
           <tr data-category="privacy">
             <td><strong>クッキー完全隔離のSpaces</strong></td>

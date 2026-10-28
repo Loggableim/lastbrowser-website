@@ -110,7 +110,6 @@
       
       <div class="download-counter" data-download-counter data-locale="de" role="status">Downloadzahl derzeit nicht verfügbar.</div>
 <div class="feature-card" role="note" style="max-width:760px;margin:18px auto 0;text-align:left;"><strong>v0.1.60:</strong> Veröffentlicht am 26. Oktober 2026. Aktuelle Dateien des GitHub-Releases; SHA-256-Prüfsummen unten.<br>Setup: 337,225,568 bytes · Portable: 336,870,880 bytes.</div>
-      <div class="feature-card" role="note" style="max-width:760px;margin:18px auto 0;text-align:left;"><strong>v0.1.59:</strong> Veröffentlicht am 22. Oktober 2026. Der Installer ist deutlich kleiner (ca. 300 MB statt ca. 610 MB), da Modelldateien nicht mehr mit eingepackt werden. Setup und Portable sind mit einem Certum-Zertifikat signiert; Prüfsummen siehe unten (SHA-256).<br>Setup: 300,020,200 bytes · Portable: 299,666,496 bytes.</div>
       <div class="feature-card" role="note" style="max-width:760px;margin:18px auto 0;text-align:left;"><strong>v0.1.58:</strong> Veröffentlicht am 17. Oktober 2026. Beta-Update-Abo mit Hinweis auf unsignierte Daily-Builds; Release-Pipeline für Daily-Beta- und Stable-Kanal; Desktop-Build-Fix und festgezurrte Python-Runtime-Abhängigkeiten für Sidekick. Setup und Portable sind Authenticode-signiert (Certum); Prüfsummen siehe SHA256SUMS.<br>Setup: 640,207,744 bytes · Portable: 639,845,984 bytes.</div>
       <div class="feature-card" role="note" style="max-width:760px;margin:12px auto 0;text-align:left;"><strong>v0.1.47 TEST · separate signierte Vorabversion:</strong> Nur zum Testen; keine stabile Veröffentlichung und keine Änderung am v0.1.60-Updatekanal. <a href="https://github.com/Loggableim/lastbrowser/releases/download/test-v0.1.47-20261007-f67320f/Lastbrowser-0.1.47-x64-setup.exe">TEST-Setup herunterladen (174.778.024 Bytes)</a> · <a href="https://github.com/Loggableim/lastbrowser/releases/download/test-v0.1.47-20261007-f67320f/Lastbrowser-0.1.47-x64-portable.exe">TEST-Portable herunterladen (174.415.880 Bytes)</a><br>Setup SHA-256: <code style="overflow-wrap:anywhere;word-break:break-all;">7affb53fb25d9dde379b367805aca6a60e5ce614676918262d276a892e7caef0</code><br>Portable SHA-256: <code style="overflow-wrap:anywhere;word-break:break-all;">0a8d82bfe4d144b5e426a7d1b1fc802779f2ab3ccd6f2e586bfc2fa98d8e6b52</code><br>VM-, Provider- und Zwei-Profil-Abnahme sind offen; nicht Store-zertifiziert.</div>
       <div class="cta-group">
@@ -299,7 +298,7 @@
 
       <div class="feature-card">
         <h3>Wo speichert LastBrowser meine Benutzerdaten?</h3>
-        <p style="margin-top:8px;">Alle Browserprofile, Spaces, ConPTY-Konfigurationen und API-Schlüssel werden ausschließlich lokal auf Ihrem System im Verzeichnis <code>%APPDATA%\Lastbrowser</code> gespeichert. API-Schlüssel werden über die native Windows Data Protection API (DPAPI) verschlüsselt.</p>
+        <p style="margin-top:8px;">Alle Browserprofile, Spaces, ConPTY-Konfigurationen und API-Schlüssel werden ausschließlich lokal auf Ihrem System im Verzeichnis <code>%APPDATA%\Lastbrowser</code> gespeichert. API-Schlüssel werden lokal im Klartext in <code>~/.sidekick/.env</code> gespeichert und nicht verschlüsselt.</p>
       </div>
 
       <div class="feature-card">

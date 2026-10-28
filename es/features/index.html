@@ -144,7 +144,7 @@
       <div class="feature-card">
         <div class="fc-icon blue">🛡️</div>
         <h3>Privacidad Local-first</h3>
-        <p>Tus contraseñas, historial y tokens de API nunca se transmiten a servidores externos. Cifrado local con Windows DPAPI en <code>%APPDATA%\Lastbrowser</code>.</p>
+        <p>Tus contraseñas, historial y tokens de API nunca se transmiten a servidores externos. Almacenamiento local en <code>%APPDATA%\Lastbrowser</code>; las claves de API se guardan en texto plano en <code>~/.sidekick/.env</code>, sin cifrar.</p>
       </div>
     </div>
   </section>
@@ -213,14 +213,6 @@
             <td><span class="cross">✗</span> Telemetría amplia Microsoft</td>
             <td><span class="check">✓</span> Enfoque privado</td>
             <td><span class="cross">✗</span> Dependencia de Cloud Sync</td>
-          </tr>
-          <tr data-category="privacy">
-            <td><strong>Cifrado DPAPI de Credenciales</strong></td>
-            <td class="highlight"><span class="check">✓</span> Cifrado nativo de Windows</td>
-            <td><span class="cross">✗</span> Cifrado dependiente de cuenta</td>
-            <td><span class="cross">✗</span> Sincronizado en la nube</td>
-            <td><span class="check">✓</span> Local</td>
-            <td><span class="cross">✗</span> Cloud Firebase</td>
           </tr>
           <tr data-category="privacy">
             <td><strong>Espacios con Cookies Aisladas</strong></td>
@@ -329,7 +321,7 @@
         <li><a href="/docs/">Documentación</a></li>
         <li><a href="/shortcuts/">Atajos de Teclado</a></li>
         <li><a href="/blog/">Blog de Ingeniería</a></li>
-        <li><a href="/security/">Seguridad y DPAPI</a></li>
+        <li><a href="/security/">Seguridad</a></li>
         <li><a href="/releases/">Archivo de Versiones</a></li>
         <li><a href="/press/">Kit de Prensa</a></li>
       </ul>

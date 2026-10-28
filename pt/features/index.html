@@ -144,7 +144,7 @@
       <div class="feature-card">
         <div class="fc-icon blue">🛡️</div>
         <h3>Privacidade Local-first</h3>
-        <p>Senhas, histórico e chaves de API nunca passam por servidores externos. Tudo fica armazenado em <code>%APPDATA%\Lastbrowser</code> protegido por DPAPI.</p>
+        <p>Senhas, histórico e chaves de API nunca passam por servidores externos. Tudo fica armazenado em <code>%APPDATA%\Lastbrowser</code>; as chaves de API ficam em texto simples em <code>~/.sidekick/.env</code>, sem criptografia.</p>
       </div>
     </div>
   </section>
@@ -213,14 +213,6 @@
             <td><span class="cross">✗</span> Telemetria ampla Microsoft</td>
             <td><span class="check">✓</span> Foco em privacidade</td>
             <td><span class="cross">✗</span> Dependência Cloud Sync</td>
-          </tr>
-          <tr data-category="privacy">
-            <td><strong>Criptografia DPAPI de Credenciais</strong></td>
-            <td class="highlight"><span class="check">✓</span> Criptografia nativa Windows</td>
-            <td><span class="cross">✗</span> Vinculada à conta Google</td>
-            <td><span class="cross">✗</span> Sincronizada na nuvem</td>
-            <td><span class="check">✓</span> Local</td>
-            <td><span class="cross">✗</span> Cloud Firebase</td>
           </tr>
           <tr data-category="privacy">
             <td><strong>Espaços com Cookies Isolados</strong></td>
@@ -329,7 +321,7 @@
         <li><a href="/docs/">Documentação</a></li>
         <li><a href="/shortcuts/">Atalhos de Teclado</a></li>
         <li><a href="/blog/">Blog de Engenharia</a></li>
-        <li><a href="/security/">Segurança &amp; DPAPI</a></li>
+        <li><a href="/security/">Segurança</a></li>
         <li><a href="/releases/">Arquivo de Versões</a></li>
         <li><a href="/press/">Kit de Imprensa</a></li>
       </ul>
