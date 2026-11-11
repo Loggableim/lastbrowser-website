@@ -45,7 +45,6 @@ LastBrowser integrates Castlabs Electron to support Widevine CDM v4.10+ on Windo
 - **Zero Involuntary Telemetry:** No tracking pixels, Google Analytics, or involuntary diagnostic reporting.
 - **Store Compliance:** Certified for Microsoft Store submission under Policy 10.2 (AI response reporting & user feedback mechanisms).
 
-## 5. Licensing Model
-- **Personal and Academic:** 100% Free of charge.
-- **Enterprise & Commercial Deployment:** Fleet management, group policy (GPO/registry) configuration, centralized MCP server orchestration, custom whitelabeling, and SLA support require a commercial license.
-- **Contact:** Business licensing inquiries are handled directly via `rainer@dominik.in`.
+## 5. Free usage
+LastBrowser is and will remain free for everyone, including businesses and commercial use. No separate commercial license is required to use LastBrowser.
+External AI services may charge their own fees.

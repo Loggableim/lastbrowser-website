@@ -136,7 +136,7 @@
   <url><loc>https://lastbrowser.com/ja/features/</loc><priority>0.8</priority></url>
 
   <!-- ========================================== -->
-  <!-- 4. ENTERPRISE & COMMERCIAL LICENSING       -->
+  <!-- 4. FREE USAGE INFORMATION       -->
   <!-- ========================================== -->
   <url>
     <loc>https://lastbrowser.com/enterprise/</loc>
@@ -158,7 +158,7 @@
   <url><loc>https://lastbrowser.com/ja/enterprise/</loc><priority>0.8</priority></url>
 
   <!-- ========================================== -->
-  <!-- 5. SIDEKICK AI BACKEND & LICENSING         -->
+  <!-- 5. SIDEKICK AI BACKEND         -->
   <!-- ========================================== -->
   <url>
     <loc>https://lastbrowser.com/sidekick/</loc>
