@@ -8,7 +8,7 @@
 - **AI Integration:** Configure available AI providers in the app settings or use local Ollama models. Provider availability and costs depend on the service.
 - **Spaces:** Strict session isolation (`persist:profile:space`) separating cookies, cache, and logins per Space.
 - **ConPTY Terminal:** Native Windows pseudo-console embedded in the browser sidebar.
-- **Commercial Licensing:** Free for personal use and research. Enterprise rollout and commercial fleet deployment contact: `rainer@dominik.in`.
+- **Free for everyone:** LastBrowser is and will remain free for everyone, including businesses and commercial use. No separate commercial license is required to use LastBrowser.
 
 ## Quick Links
 - [Official Website](https://lastbrowser.com/)
@@ -16,7 +16,7 @@
 - [Documentation](https://lastbrowser.com/docs/)
 - [MCP & Skills Hub](https://lastbrowser.com/hub/)
 - [Keyboard Shortcuts](https://lastbrowser.com/shortcuts/)
-- [Enterprise & Fleet Licensing](https://lastbrowser.com/enterprise/)
+
 - [Security & Architecture Whitepaper](https://lastbrowser.com/security/)
 - [Privacy Policy](https://lastbrowser.com/privacy/)
 - [Full LLM Architecture Guide](https://lastbrowser.com/llms-full.txt)
