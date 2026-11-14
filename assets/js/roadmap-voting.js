@@ -1,4 +1,4 @@
-import { roadmapCatalog } from './roadmap-catalog.js?v=2';
+import { roadmapCatalog } from './roadmap-catalog.js?v=3';
 
 const de = document.documentElement.lang.startsWith('de');
 const words = de ? {
